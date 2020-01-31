@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Rhomb gallery on grids + clip-path</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+HTML, BODY {
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Trebuchet MS, Helvetica, Arial, sans-serif;
+}
+
+BODY {
+  overflow: hidden;
+  background-color: #222;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.025) 10%, transparent 0), linear-gradient(#222, #000);
+  background-size: .75em 100%, 100% 100%;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.wrapperLogo {
+  position: relative;
+  flex-grow: 1;
+  margin: auto;
+  max-width: 1200px;
+  max-height: 1200px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2vmin;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapperLogo img {
+  z-index: 1;
+  grid-column: span 2;
+  max-width: 100%;
+  margin-bottom: -52%;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: all .25s;
+}
+.wrapperLogo img:nth-child(5n + 1) {
+  grid-column: 2 / span 2;
+}
+.wrapperLogo img:hover {
+  z-index: 2;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="wrapperLogo">
+  <img src="https://source.unsplash.com/random/600x600?water" alt="">
+  <img src="https://source.unsplash.com/random/600x600?summer" alt="">
+  <img src="https://source.unsplash.com/random/600x600?plants" alt="">
+  <img src="https://source.unsplash.com/random/600x600?snow" alt="">
+  <img src="https://source.unsplash.com/random/600x600?roses" alt="">
+  <img src="https://source.unsplash.com/random/600x600?sky" alt="">
+  <img src="https://source.unsplash.com/random/600x600?nature" alt="">
+</div>
+<script src="https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-9a987901e00d6923a532b8e149a50c27b38cffc6a3aa17d7e455fd14fc8778fe.js"></script>
+</body>
+</html>

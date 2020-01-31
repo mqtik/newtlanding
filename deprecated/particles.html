@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CodePen - ParticleVisual</title>
+<link rel="stylesheet" media="screen" href="https://static.codepen.io/assets/fullpage/fullpage-5685e76af3f282c94e211da3f3eb04396287d49fae7709088060651307b9d7a4.css" />
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic' rel='stylesheet'>
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - ParticleVisual</title>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+    .referer-warning {
+      background: black;
+      box-shadow: 0 2px 5px rgba(0,0,0, 0.5);
+      padding: 0.75em;
+      color: white;
+      text-align: center;
+      font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+      line-height: 1.2;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .referer-warning h1 { font-size: 1.2rem; margin: 0; }
+    .referer-warning a { color: #56bcf9; } /* $linkColorOnBlack */
+  </style>
+</head>
+<body class="">
+
+<div id="result-iframe-wrap" role="main">
+
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - ParticleVisual</title>
+  
+  
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css&quot;>
+
+  
+  
+<style>
+body {
+  width: 100vw;
+  height: 100vh;
+}
+#canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <canvas id=canvas></canvas>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
+  
+      <script id=&quot;rendered-js&quot; >
+function random(low, high) {
+  return Math.random() * (high - low) + low;
+}
+
+class Visual {
+  constructor() {
+    this.canvas = document.querySelector('#canvas');
+    this.context = this.canvas.getContext('2d');
+    this.canvasWidth = 0;
+    this.canvasHeight = 0;
+    this.particleLength = 150;
+    this.particles = [];
+    this.particleMaxRadius = 8;
+
+    this.handleMouseMoveBind = this.handleMouseMove.bind(this);
+    this.handleClickBind = this.handleClick.bind(this);
+    this.handleResizeBind = this.handleResize.bind(this);
+
+    this.initialize();
+    this.render();
+  }
+
+  initialize() {
+    this.resizeCanvas();
+    for (let i = 0; i < this.particleLength; i++) {
+      this.particles.push(this.createParticle(i));
+    }
+    this.bind();
+  }
+
+  bind() {
+    document.body.addEventListener('mousemove', this.handleMouseMoveBind, false);
+    document.body.addEventListener('click', this.handleClickBind, false);
+    window.addEventListener('resize', this.handleResizeBind, false);
+  }
+
+  unbind() {
+    document.body.removeEventListener('mousemove', this.handleMouseMoveBind, false);
+    document.body.removeEventListener('click', this.handleClickBind, false);
+    window.removeEventListener('resize', this.handleResizeBind, false);
+  }
+
+  handleMouseMove(e) {
+    this.enlargeParticle(e.clientX, e.clientY);
+  }
+
+  handleClick(e) {
+    this.burstParticle(e.clientX, e.clientY);
+  }
+
+  handleResize() {
+    this.resizeCanvas();
+  }
+
+  resizeCanvas() {
+    this.canvasWidth = document.body.offsetWidth;
+    this.canvasHeight = document.body.offsetHeight;
+    this.canvas.width = this.canvasWidth * window.devicePixelRatio;
+    this.canvas.height = this.canvasHeight * window.devicePixelRatio;
+    this.context = this.canvas.getContext('2d');
+    this.context.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+
+  createParticle(id, isRecreate) {
+    const radius = random(1, this.particleMaxRadius);
+    const x = isRecreate ? -radius - random(0, this.canvasWidth) : random(0, this.canvasWidth);
+    let y = random(this.canvasHeight / 2 - 150, this.canvasHeight / 2 + 150);
+    y += random(-100, 100);
+    const alpha = random(0.05, 1);
+
+    return {
+      id: id,
+      x: x,
+      y: y,
+      startY: y,
+      radius: radius,
+      defaultRadius: radius,
+      startAngle: 0,
+      endAngle: Math.PI * 2,
+      alpha: alpha,
+      color: { r: random(0, 100), g: random(0, 100), b: 255 },
+      speed: alpha + 1,
+      amplitude: random(50, 200),
+      isBurst: false };
+
+  }
+
+  drawParticles() {
+    this.particles.forEach(particle => {
+      // 位置情報更新
+      this.moveParticle(particle);
+
+      // particle描画
+      this.context.beginPath();
+      this.context.fillStyle = `rgba(${particle.color.r}, ${particle.color.g}, ${particle.color.b}, ${particle.alpha})`;
+      this.context.arc(particle.x, particle.y, particle.radius, particle.startAngle, particle.endAngle);
+      this.context.fill();
+    });
+  }
+
+  moveParticle(particle) {
+    particle.x += particle.speed;
+    particle.y = particle.startY + particle.amplitude * Math.sin(particle.x / 5 * Math.PI / 180);
+  }
+
+  enlargeParticle(clientX, clientY) {
+    this.particles.forEach(particle => {
+      if (particle.isBurst) return;
+
+      const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
+
+      if (distance <= 100) {
+        const scaling = (100 - distance) / 1.5;
+        TweenMax.to(particle, 0.5, {
+          radius: particle.defaultRadius + scaling,
+          ease: Power2.easeOut });
+
+      } else {
+        TweenMax.to(particle, 0.5, {
+          radius: particle.defaultRadius,
+          ease: Power2.easeOut });
+
+      }
+    });
+  }
+
+  burstParticle(clientX, clientY) {
+    this.particles.forEach(particle => {
+      const distance = Math.hypot(particle.x - clientX, particle.y - clientY);
+
+      if (distance <= 100) {
+        particle.isBurst = true;
+        TweenMax.to(particle, 0.5, {
+          radius: particle.defaultRadius + 200,
+          alpha: 0,
+          ease: Power2.easeOut,
+          onComplete: () => {
+            this.particles[particle.id] = this.createParticle(particle.id, true);
+          } });
+
+      }
+    });
+  }
+
+  render() {
+    // canvas初期化
+    this.context.clearRect(0, 0, this.canvasWidth + this.particleMaxRadius * 2, this.canvasHeight);
+
+    // particleを描画
+    this.drawParticles();
+
+    // 画面から消えたら新しいparticleに差し替え
+    this.particles.forEach(particle => {
+      if (particle.x - particle.radius >= this.canvasWidth) {
+        this.particles[particle.id] = this.createParticle(particle.id, true);
+      }
+    });
+
+    requestAnimationFrame(this.render.bind(this));
+  }}
+
+
+new Visual();
+//# sourceURL=pen.js
+    </script>
+
+  
+  
+
+</body>
+
+</html>
+ 
+</div>
+</body>
+</html>

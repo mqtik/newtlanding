@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Newt - Button</title>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: white;
+  height: 100%;
+  width: 100%;
+  background-color: #303247;
+}
+
+.container {
+  -webkit-filter: url("#goo");
+          filter: url("#goo");
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 300px;
+}
+
+@-webkit-keyframes blob-left-top {
+  0% {
+    -webkit-transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+            transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1) translate(-30px, -30px);
+            transform: scale(1) translate(-30px, -30px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.4) translate(-80px, -80px);
+            transform: scale(0.4) translate(-80px, -80px);
+    opacity: 0;
+  }
+}
+
+@keyframes blob-left-top {
+  0% {
+    -webkit-transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+            transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1) translate(-30px, -30px);
+            transform: scale(1) translate(-30px, -30px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0.4) translate(-80px, -80px);
+            transform: scale(0.4) translate(-80px, -80px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes blob-right-bottom {
+  0% {
+    -webkit-transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+            transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.8) translate(40px, 40px);
+            transform: scale(0.8) translate(40px, 40px);
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.7) translate(50px, 50px);
+            transform: scale(0.7) translate(50px, 50px);
+  }
+}
+@keyframes blob-right-bottom {
+  0% {
+    -webkit-transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+            transform: scale(1.3, 0.9) rotate(-90deg) translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.8) translate(40px, 40px);
+            transform: scale(0.8) translate(40px, 40px);
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.7) translate(50px, 50px);
+            transform: scale(0.7) translate(50px, 50px);
+  }
+}
+@-webkit-keyframes splash-1 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(25px, -45px);
+            transform: translate(25px, -45px);
+  }
+}
+@keyframes splash-1 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(25px, -45px);
+            transform: translate(25px, -45px);
+  }
+}
+@-webkit-keyframes splash-2 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-55px, -30px);
+            transform: translate(-55px, -30px);
+  }
+}
+@keyframes splash-2 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-55px, -30px);
+            transform: translate(-55px, -30px);
+  }
+}
+@-webkit-keyframes splash-3 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(5px, 40px);
+            transform: translate(5px, 40px);
+  }
+}
+@keyframes splash-3 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(5px, 40px);
+            transform: translate(5px, 40px);
+  }
+}
+@-webkit-keyframes splash-4 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(30px, -5px);
+            transform: translate(30px, -5px);
+  }
+}
+@keyframes splash-4 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(30px, -5px);
+            transform: translate(30px, -5px);
+  }
+}
+@-webkit-keyframes splash-5 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(20px, 5px);
+            transform: translate(20px, 5px);
+  }
+}
+@keyframes splash-5 {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(20px, 5px);
+            transform: translate(20px, 5px);
+  }
+}
+@-webkit-keyframes button-grow {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  25% {
+    -webkit-transform: scale(1.02) translate(-50%, -50%);
+            transform: scale(1.02) translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  75% {
+    -webkit-transform: scale(1.01) translate(-50%, -50%);
+            transform: scale(1.01) translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+}
+@keyframes button-grow {
+  0% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  25% {
+    -webkit-transform: scale(1.02) translate(-50%, -50%);
+            transform: scale(1.02) translate(-50%, -50%);
+  }
+  50% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+  75% {
+    -webkit-transform: scale(1.01) translate(-50%, -50%);
+            transform: scale(1.01) translate(-50%, -50%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+  }
+}
+.button {
+  position: absolute;
+  white-space: nowrap;
+  background: #c853f8;
+  padding: 20px 70px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-animation: cubic-bezier(0.64, 0.57, 0.67, 1.53) 0.5s;
+          animation: cubic-bezier(0.64, 0.57, 0.67, 1.53) 0.5s;
+}
+.button:hover {
+  background-color: #c549f8;
+  transition: 0.25s ease;
+}
+
+.blob {
+  position: absolute;
+  background: #c549f8;
+  border-radius: 50% 40%;
+  height: 25px;
+  width: 25px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-animation: cubic-bezier(0.2, 0, 1, 0.3) 0.5s;
+          animation: cubic-bezier(0.2, 0, 1, 0.3) 0.5s;
+}
+.blob .splash {
+  content: "";
+  position: absolute;
+  background-color: #c549f8;
+  border-radius: 50%;
+  height: 5px;
+  width: 5px;
+  top: -12px;
+  left: 8px;
+  opacity: 0;
+  z-index: 2;
+  -webkit-animation: all cubic-bezier(0.8, 0, 1, 0.3) 0.5s;
+          animation: all cubic-bezier(0.8, 0, 1, 0.3) 0.5s;
+}
+.blob .splash:nth-child(2) {
+  height: 4px;
+  width: 4px;
+  top: 5px;
+  left: -10px;
+}
+
+.blob:nth-child(2) {
+  right: 0;
+  bottom: 0;
+  top: auto;
+  left: auto;
+}
+.blob:nth-child(2) .splash {
+  top: 30px;
+  left: 20px;
+}
+.blob:nth-child(2) .splash:nth-child(2) {
+  top: 5px;
+  left: 40px;
+}
+.blob:nth-child(2) .splash:nth-child(3) {
+  top: 10px;
+  left: 30px;
+}
+
+.blob:nth-child(2).animated {
+  -webkit-animation-name: blob-right-bottom;
+          animation-name: blob-right-bottom;
+}
+.blob:nth-child(2).animated .splash:nth-child(1).animated {
+  -webkit-animation-name: splash-3;
+          animation-name: splash-3;
+}
+.blob:nth-child(2).animated .splash:nth-child(2).animated {
+  -webkit-animation-name: splash-4;
+          animation-name: splash-4;
+}
+.blob:nth-child(2).animated .splash:nth-child(3).animated {
+  -webkit-animation-name: splash-5;
+          animation-name: splash-5;
+}
+
+.blob:nth-child(1).animated {
+  -webkit-animation-name: blob-left-top;
+          animation-name: blob-left-top;
+}
+.blob:nth-child(1).animated .splash:nth-child(1).animated {
+  -webkit-animation-name: splash-1;
+          animation-name: splash-1;
+}
+.blob:nth-child(1).animated .splash:nth-child(2).animated {
+  -webkit-animation-name: splash-2;
+          animation-name: splash-2;
+}
+
+.button.animated {
+  -webkit-animation-name: button-grow;
+          animation-name: button-grow;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="container">
+<div class="button">Click me
+<div class="blobs">
+<div class="blob">
+<div class="splash"></div>
+<div class="splash"></div>
+</div>
+<div class="blob">
+<div class="splash"></div>
+<div class="splash"></div>
+<div class="splash"></div>
+</div>
+</div>
+</div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<filter id="goo">
+<feGaussianBlur in="SourceGraphic" stdDeviation="7 7" result="blur"></feGaussianBlur>
+<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+<feComposite in="SourceGraphic" in2="goo"></feComposite>
+</filter>
+</defs>
+</svg>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-30d18ea41045577cdb11c797602d08e0b9c2fa407c8b81058b1c422053ad8041.js"></script>
+<script id="rendered-js">
+var dur = 600;
+var button = document.querySelector('.button');
+var blobs = [].slice.call(document.querySelectorAll('.blob'));
+var splash = [].slice.call(document.querySelectorAll('.splash'));
+button.addEventListener('click', function () {
+  blobs.forEach(el => {
+    el.classList.add('animated');
+    setTimeout(function () {
+      el.classList.remove('animated');
+    }, dur);
+  });
+  splash.forEach(el => {
+    el.classList.add('animated');
+    setTimeout(function () {
+      el.classList.remove('animated');
+    }, dur);
+  });
+  button.classList.add('animated');
+  setTimeout(function () {
+    button.classList.remove('animated');
+  }, dur);
+
+});
+//# sourceURL=pen.js
+    </script>
+<script src="https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-9a987901e00d6923a532b8e149a50c27b38cffc6a3aa17d7e455fd14fc8778fe.js"></script>
+</body>
+</html>
