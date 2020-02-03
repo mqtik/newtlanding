@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - CSS doodle</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+}
+
+.cell {
+  -webkit-animation: rotate 10s infinite;
+          animation: rotate 10s infinite;
+  opacity:0.2;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<css-doodle grid="8">
+:doodle {
+size: 100vmax;
+background: #673AB7;
+overflow: hidden;
+}
+clip-path: @shape(bud, 5);
+background: hsla(
+calc(300 + 3 * @index()), 75%, 70%, @rand(.8)
+);
+transition: .2s ease @rand(300ms);
+transform:
+scale(@rand(.2, 1.5))
+translate3d(
+@rand(-50%, 50%),
+@rand(-50%, 50%),
+0
+);
+</css-doodle>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/52982/css-doodle.min.js'></script>
+<script id="rendered-js">
+document.body.addEventListener('mousemove', function (e) {
+  if (e.target.matches('css-doodle')) {
+    e.target.refresh();
+  }
+});
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>

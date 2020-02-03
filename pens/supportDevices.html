@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Time To Support All Devices</title>
+<style>
+body {
+  background-color:#00A5F4;
+  overflow: hidden;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+svg{
+  width:100%;
+  height:100%;
+  visibility:hidden;
+  overflow:visible;
+ 
+}
+
+text{
+  fill:#ededed;
+  font-size:23px;
+  text-anchor:middle;
+  font-family:Arial, sans-serif;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="container">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+<defs>
+<g id="phone">
+<path id="phoneEdge" fill="#494D5D" d="M331.5,331.1V68.9c0-3.2,2.7-5.9,5.9-5.9h125.3c3.2,0,5.9,2.7,5.9,5.9v262.3
+		c0,3.2-2.7,5.9-5.9,5.9H337.4C334.1,337,331.5,334.4,331.5,331.1z" />
+<circle id="phoneButton" fill="#EBE7DF" cx="400" cy="315.9" r="8.9" />
+<circle id="phoneCamera" fill="#A4ACBB" cx="376.8" cy="79.2" r="2.2" />
+<rect id="phoneScreen" x="340.8" y="95.1" fill="#BDCCD4" width="118.4" height="200.9" />
+<line id="phoneSpeaker" fill="none" stroke="#9AA3B2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="388.9" y1="78.3" x2="411.1" y2="78.3" />
+<g id="phoneContentGroup">
+<path fill="#E5EBEE" d="M446.2,126.7h-92.5c-1,0-1.9-0.9-1.9-1.9v-12.6c0-1,0.9-1.9,1.9-1.9h92.5c1,0,1.9,0.9,1.9,1.9v12.6
+			C448.1,125.8,447.3,126.7,446.2,126.7z" />
+<path fill="#8CA5B2" d="M391.7,279.7h-38c-1,0-1.9-0.8-1.9-1.9v-38.9c0-1,0.8-1.9,1.9-1.9h38c1,0,1.9,0.8,1.9,1.9v38.9
+			C393.6,278.8,392.8,279.7,391.7,279.7z" />
+<path fill="#8CA5B2" d="M446.3,222.6h-92.5c-1,0-1.9-0.8-1.9-1.9v-78.5c0-1,0.8-1.9,1.9-1.9h92.5c1,0,1.9,0.8,1.9,1.9v78.5
+			C448.1,221.8,447.3,222.6,446.3,222.6z" />
+<path fill="#E5EBEE" d="M447.5,244H405c-0.4,0-0.7-0.3-0.7-0.7v-5.7c0-0.4,0.3-0.7,0.7-0.7h42.5c0.4,0,0.7,0.3,0.7,0.7v5.7
+			C448.1,243.7,447.8,244,447.5,244z" />
+<path fill="#E5EBEE" d="M447.5,279.7H405c-0.4,0-0.7-0.3-0.7-0.7v-5.7c0-0.4,0.3-0.7,0.7-0.7h42.5c0.4,0,0.7,0.3,0.7,0.7v5.7
+			C448.1,279.4,447.8,279.7,447.5,279.7z" />
+<path fill="#E5EBEE" d="M447.5,261.2H405c-0.4,0-0.7-0.3-0.7-0.7v-5.7c0-0.4,0.3-0.7,0.7-0.7h42.5c0.4,0,0.7,0.3,0.7,0.7v5.7
+			C448.1,260.9,447.8,261.2,447.5,261.2z" />
+</g>
+</g>
+<mask id="monitorMask">
+<path class="monitorMask" fill="none" stroke="White" stroke-width="180" d="M400,110c49.7,0,90,40.3,90,90	s-40.3,90-90,90s-90-40.3-90-90S350.3,110,400,110" />
+</mask>
+<mask id="laptopMask">
+<path class="laptopMask" fill="none" stroke="White" stroke-width="180" d="M400,110c49.7,0,90,40.3,90,90	s-40.3,90-90,90s-90-40.3-90-90S350.3,110,400,110" />
+</mask>
+<mask id="tabletMask">
+<path class="tabletMask" fill="none" stroke="White" stroke-width="180" d="M400,110c49.7,0,90,40.3,90,90	s-40.3,90-90,90s-90-40.3-90-90S350.3,110,400,110" />
+</mask>
+<mask id="phoneMask">
+<path class="phoneMask" fill="none" stroke="White" stroke-width="180" d="M400,110c49.7,0,90,40.3,90,90	s-40.3,90-90,90s-90-40.3-90-90S350.3,110,400,110" />
+</mask>
+</defs>
+<mask id="endHide">
+<rect width="100%" height="100%" fill="#FFF" />
+<circle class="endHide" cx="400" cy="200" r="0" fill="#000" stroke="none" stroke-width="6" />
+</mask>
+<g class="allDevices" mask="url(#endReveal)">
+<text x="50%" y="50%">It's time to support every device.</text>
+</g>
+<mask id="endReveal">
+<circle class="endReveal" cx="400" cy="200" r="0" fill="#FFF" stroke="none" stroke-width="6" />
+</mask>
+<mask id="startReveal">
+<rect width="100%" height="100%" fill="#FFF" />
+<circle class="startReveal" cx="400" cy="200" r="0" fill="#000" stroke="none" stroke-width="0" />
+</mask>
+<circle class="startRevealFill" cx="400" cy="200" r="0" fill="#FFF" stroke="none" stroke-width="0" opacity="0" />
+<g class="startText" mask="url(#startReveal)">
+<text x="50%" y="50%">It's time to support every device.</text>
+</g>
+<g id="endPhone" mask="url(#endHide)" opacity="0">
+<use xlink:href="#phone" />
+</g>
+<g id="monitorGroup" mask="url(#monitorMask)">
+<g class="rotater">
+<path id="monitorStand" fill="#EBE7DF" d="M443.1,310.6h-6L427,282.7l-51.8,0l-10.4,27.8h-6c-1.3,0-2.3,0.9-2.3,2.2
+		c0,1.3,1,2.2,2.3,2.2l84.3,0c1.3,0,2.3-0.9,2.3-2.2S444.4,310.6,443.1,310.6z" />
+<polygon id="monitorStandShadow_1_" fill="#D9D7D3" points="429,288.6 372.9,288.6 375.1,282.7 426.9,282.7 	" />
+<path id="monitorEdge_1_" fill="#494D5D" d="M527.8,99h-254c-3.5,0-5.8,2.8-5.8,6.3V258h266V105.3C534,101.8,531.3,99,527.8,99z" />
+<path id="monitorBottom_1_" fill="#EBE7DF" d="M534,258v18.4c0,3.5-2.7,5.6-6.2,5.6h-254c-3.5,0-5.8-2.1-5.8-5.6V258H534z" />
+<path id="monitorScreen_1_" fill="#BDCCD4" d="M516.8,248l-231.7,0c-3.9,0-7-3.2-7-7l0-125.2c0-3.8,3.2-7,7-7l231.7,0
+		c3.8,0,7,3.2,7,7l0,125.2C523.8,244.8,520.7,248,516.8,248z" />
+<circle id="monitorLogo_1_" fill="#A4ACBB" cx="400.9" cy="268.6" r="4.9" />
+<rect id="monitorStandMask_1_" x="265.7" y="283" display="none" fill="#EA2877" width="268.7" height="49.8" />
+</g>
+</g>
+<g id="laptopGroup" mask="url(#laptopMask)">
+<g class="rotater">
+<path id="laptopEdge_2_" fill="#494D5D" d="M524.1,109.1v166.4H275.9V109.1c0-2.8,2.3-5.2,5.2-5.2h237.9
+		C521.8,103.9,524.1,106.2,524.1,109.1z" />
+<path id="laptopBase_2_" fill="#494D5D" d="M538,281v10.7c0,2.8-2.6,5.3-5.4,5.3H267.4c-2.8,0-5.4-2.5-5.4-5.3V281H538z" />
+<polygon id="laptopTrackpad_2_" fill="#A4ACBB" points="419.6,289.7 380.4,289.7 376.7,284.1 423.3,284.1 	" />
+<path id="laptopScreen_2_" fill="#BDCCD4" d="M510.6,257.7H289.4c-3.8,0-7-3.2-7-7V117.6c0-3.9,3.2-7,7-7h221.2c3.9,0,7,3.1,7,7
+		v133.1C517.6,254.5,514.4,257.7,510.6,257.7z" />
+<g id="laptopContentGroup">
+<path fill="#E5EBEE" d="M499.9,133.4H300.1c-1.9,0-3.5-1.6-3.5-3.5v-5.1c0-1.9,1.6-3.5,3.5-3.5h199.7c1.9,0,3.5,1.6,3.5,3.5v5.1
+			C503.3,131.9,501.8,133.4,499.9,133.4z" />
+<path fill="#8CA5B2" d="M335.9,245h-35.9c-1.9,0-3.4-1.5-3.4-3.4v-24.3c0-1.9,1.5-3.4,3.4-3.4h35.9c1.9,0,3.4,1.5,3.4,3.4v24.3
+			C339.3,243.5,337.8,245,335.9,245z" />
+<path fill="#8CA5B2" d="M499.9,203.4H300.1c-1.9,0-3.4-1.5-3.4-3.4v-53.2c0-1.9,1.5-3.4,3.4-3.4h199.9c1.9,0,3.4,1.5,3.4,3.4V200
+			C503.3,201.9,501.8,203.4,499.9,203.4z" />
+<path fill="#E5EBEE" d="M502.1,219H351.5c-0.7,0-1.2-0.5-1.2-1.2v-2.7c0-0.7,0.5-1.2,1.2-1.2h150.6c0.7,0,1.2,0.5,1.2,1.2v2.7
+			C503.3,218.4,502.8,219,502.1,219z" />
+<path fill="#E5EBEE" d="M502.1,245H351.5c-0.7,0-1.2-0.5-1.2-1.2v-2.7c0-0.7,0.5-1.2,1.2-1.2h150.6c0.7,0,1.2,0.5,1.2,1.2v2.7
+			C503.3,244.4,502.8,245,502.1,245z" />
+<path fill="#E5EBEE" d="M502.1,231.5H351.5c-0.7,0-1.2-0.5-1.2-1.2v-2.7c0-0.7,0.5-1.2,1.2-1.2h150.6c0.7,0,1.2,0.5,1.2,1.2v2.7
+			C503.3,231,502.8,231.5,502.1,231.5z" />
+</g>
+</g>
+</g>
+<g id="tabletGroup" mask="url(#tabletMask)">
+<g class="rotater">
+<path id="tabletEdge" fill="#494D5D" d="M303.9,312.5V87.5c0-7.7,6.3-14,14-14h164.3c7.7,0,14,6.3,14,14v224.9
+		c0,7.7-6.3,14-14,14H317.9C310.2,326.5,303.9,320.2,303.9,312.5z" />
+<path id="tabletScreen" fill="#BDCCD4" d="M322.8,295.9V104.1c0-2.8,2.3-5,5-5h144.4c2.8,0,5,2.3,5,5v191.8c0,2.8-2.3,5-5,5
+		H327.8C325.1,300.9,322.8,298.6,322.8,295.9z" />
+<circle id="tabletButton" fill="#EBE7DF" cx="400" cy="314.6" r="5.7" />
+<circle id="tabletCamera" fill="#A4ACBB" cx="400" cy="89.2" r="1.9" />
+<g id="tabletContentGroup">
+<path fill="#E5EBEE" d="M460,136H340.4c-1.9,0-3.5-1.6-3.5-3.5V124c0-1.9,1.6-3.5,3.5-3.5H460c1.9,0,3.5,1.6,3.5,3.5v8.5
+			C463.5,134.4,461.9,136,460,136z" />
+<path fill="#8CA5B2" d="M388.4,279.5h-48.1c-1.9,0-3.4-1.5-3.4-3.4v-33.2c0-1.9,1.5-3.4,3.4-3.4h48.1c1.9,0,3.4,1.5,3.4,3.4v33.2
+			C391.8,277.9,390.3,279.5,388.4,279.5z" />
+<path fill="#8CA5B2" d="M460.1,226H340.3c-1.9,0-3.4-1.5-3.4-3.4v-70.3c0-1.9,1.5-3.4,3.4-3.4h119.8c1.9,0,3.4,1.5,3.4,3.4v70.3
+			C463.5,224.4,462,226,460.1,226z" />
+<path fill="#E5EBEE" d="M462.3,246h-55.2c-0.7,0-1.2-0.5-1.2-1.2v-4.2c0-0.7,0.5-1.2,1.2-1.2h55.2c0.7,0,1.2,0.5,1.2,1.2v4.2
+			C463.5,245.5,463,246,462.3,246z" />
+<path fill="#E5EBEE" d="M462.3,279.5h-55.2c-0.7,0-1.2-0.5-1.2-1.2v-4.2c0-0.7,0.5-1.2,1.2-1.2h55.2c0.7,0,1.2,0.5,1.2,1.2v4.2
+			C463.5,278.9,463,279.5,462.3,279.5z" />
+<path fill="#E5EBEE" d="M462.3,262.2h-55.2c-0.7,0-1.2-0.5-1.2-1.2v-4.2c0-0.7,0.5-1.2,1.2-1.2h55.2c0.7,0,1.2,0.5,1.2,1.2v4.2
+			C463.5,261.6,463,262.2,462.3,262.2z" />
+</g>
+</g>
+</g>
+<g id="phoneGroup" mask="url(#phoneMask)">
+<g class="rotater">
+<use xlink:href="#phone" />
+</g>
+</g>
+<g class="lineGroup" fill="none" stroke="#ededed" stroke-width="8" stroke-linecap="round" stroke-linejoin="none" stroke-miterlimit="10">
+<path id="wipeOutline" d="M400,20
+	c99.3,0,180,80.7,180,180c0,99.3-80.7,180-180,180c-99.3,0-180-80.7-180-180C220,100.7,300.7,20,400,20z" />
+<line id="upLine" x1="400" y1="200" x2="400" y2="20" />
+<line id="rotationLine" x1="400" y1="200" x2="400" y2="20" />
+</g>
+<circle class="popDot" cx="400" cy="200" r="0" fill="none" stroke="#ededed" stroke-width="3" />
+</svg>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=12'></script>
+<script id="rendered-js">
+var xmlns = "http://www.w3.org/2000/svg",
+select = function (s) {
+  return document.querySelector(s);
+},
+selectAll = function (s) {
+  return document.querySelectorAll(s);
+},
+container = select('.container'),
+popDot = selectAll('.popDot'),
+endReveal = select('.endReveal'),
+startReveal = select('.startReveal'),
+endHide = select('.endHide');
+
+
+
+//center the container cos it's pretty an' that
+TweenMax.set(container, {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  xPercent: -50,
+  yPercent: -50 });
+
+TweenMax.set('svg', {
+  visibility: 'visible' });
+
+
+TweenMax.set(['.monitorMask', '.laptopMask', '.tabletMask', '.phoneMask'], {
+  drawSVG: '0% 0%' });
+
+
+
+var tl = new TimelineMax({ repeat: -1, delay: 3, repeatDelay: 3 });
+tl.to(popDot, 4, {
+  attr: {
+    r: 182 },
+
+  alpha: 0,
+  ease: Power3.easeOut }).
+
+to(startReveal, 4, {
+  attr: {
+    r: 180 },
+
+  ease: Power3.easeOut },
+'-=4').
+to('.startRevealFill', 4, {
+  attr: {
+    r: 180 },
+
+  alpha: 0,
+  ease: Power3.easeOut },
+'-=4').
+
+from(['#rotationLine', '#upLine'], 4, {
+  drawSVG: '0% 0%',
+  alpha: 0,
+  ease: Power3.easeOut },
+
+'-=4').
+
+to('.monitorMask', 3, {
+  drawSVG: '0% 100%',
+  ease: Power3.easeInOut }).
+
+from('#wipeOutline', 3, {
+  drawSVG: '0% 0%',
+  ease: Power3.easeInOut },
+'-=3').
+
+to('#rotationLine', 3, {
+  rotation: '+=360',
+  //transformOrigin:'50% 100%'
+  svgOrigin: '400 200',
+  ease: Power3.easeInOut },
+'-=3').
+from('#monitorGroup', 6, {
+  scale: 0.3,
+  //rotation:180,
+  transformOrigin: '50% 50%',
+  ease: Expo.easeOut },
+'-=3').
+
+from('#monitorGroup .rotater', 5, {
+  //scale:0.3,
+  rotation: -90,
+  transformOrigin: '50% 50%',
+  ease: Back.easeOut.config(2) },
+'-=6').
+
+
+to('.monitorMask', 3, {
+  drawSVG: '100% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('.laptopMask', 3, {
+  drawSVG: '0% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('#wipeOutline', 3, {
+  drawSVG: '100% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+set('#wipeOutline', {
+  drawSVG: '0% 0%' }).
+
+to('#rotationLine', 3, {
+  rotation: '+=360',
+  ease: Power3.easeInOut },
+'-=3').
+from('#laptopGroup', 6, {
+  scale: 0.3,
+  //rotation:180,
+  transformOrigin: '50% 50%',
+  ease: Expo.easeOut },
+'-=3').
+from('#laptopGroup .rotater', 5, {
+  //scale:0.3,
+  rotation: 90,
+  transformOrigin: '50% 50%',
+  ease: Back.easeOut.config(2) },
+'-=6').
+
+to('.laptopMask', 3, {
+  drawSVG: '100% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('.tabletMask', 3, {
+  drawSVG: '0% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('#wipeOutline', 3, {
+  drawSVG: '0% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+
+to('#rotationLine', 3, {
+  rotation: '+=360',
+  ease: Power3.easeInOut },
+'-=3').
+from('#tabletGroup', 6, {
+  scale: 0.3,
+  //rotation:180,
+  transformOrigin: '50% 50%',
+  ease: Expo.easeOut },
+'-=3').
+from('#tabletGroup .rotater', 5, {
+  //scale:0.3,
+  rotation: -90,
+  transformOrigin: '50% 50%',
+  ease: Back.easeOut.config(2) },
+'-=6').
+
+
+to('.tabletMask', 3, {
+  drawSVG: '100% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('.phoneMask', 3, {
+  drawSVG: '0% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+to('#wipeOutline', 3, {
+  drawSVG: '100% 100%',
+  ease: Power3.easeInOut },
+'-=3').
+set('#wipeOutline', {
+  drawSVG: '0% 0%',
+  alpha: 0 }).
+
+to('#rotationLine', 3, {
+  rotation: '+=360',
+  ease: Power3.easeInOut },
+'-=3').
+from('#phoneGroup', 6, {
+  scale: 0.3,
+  //rotation:180,
+  transformOrigin: '50% 50%',
+  ease: Expo.easeOut },
+'-=3').
+from('#phoneGroup .rotater', 5, {
+  //scale:0.3,
+  rotation: 90,
+  transformOrigin: '50% 50%',
+  ease: Elastic.easeOut.config(0.31, 2) },
+'-=6').
+
+to('.phoneMask', 3, {
+  drawSVG: '100% 0%',
+  ease: Power3.easeInOut },
+'-=3').
+to(['#rotationLine', '#upLine'], 1, {
+  drawSVG: '0% 0%',
+  ease: Power1.easeIn },
+'-=3.25').
+set(['#rotationLine', '#upLine', '#wipeOutline'], {
+  alpha: 0 },
+'-=2').
+set('#phoneGroup', {
+  alpha: 0 },
+'-=2.25').
+set('#endPhone', {
+  alpha: 1 },
+'-=2.25').
+
+set(['.monitorMask', '.laptopMask', '.tabletMask', '.phoneMask'], {
+  drawSVG: '100% 0%' }).
+
+set(popDot, {
+  attr: {
+    r: 0 },
+
+  alpha: 1 },
+'-=2.25').
+
+set(['#monitorGroup', '#laptopGroup', '#tabletGroup'], {
+  transformOrigin: '50% 100%',
+  scale: 0 }).
+
+to([popDot], 4, {
+  attr: {
+    r: 180 },
+
+  alpha: 0 },
+'-=2.25').
+
+to([endReveal], 4, {
+  attr: {
+    r: 180 } },
+
+'-=4').
+to([endHide], 4, {
+  attr: {
+    r: 180 } },
+
+'-=4').
+
+
+to('#endPhone', 7, {
+  rotation: -190,
+  transformOrigin: '50% 50%',
+  ease: Power1.easeOut },
+'-=4').
+from('#endText', 7, {
+  rotation: 90,
+  scale: 14,
+  ease: Power4.easeOut,
+  transformOrigin: '50% 50%' },
+'-=7');
+
+tl.timeScale(2.6);
+
+
+
+//ScrubGSAPTimeline(tl)
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>

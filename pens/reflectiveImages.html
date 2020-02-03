@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Reflective Photo Gallery Wall (experiment)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url("https://fonts.googleapis.com/css?family=Raleway:100i,400");
+@media (min-width: 0px) {
+  body {
+    -webkit-perspective: 250px;
+            perspective: 250px;
+  }
+}
+@media (min-width: 700px) {
+  body {
+    -webkit-perspective: 500px;
+            perspective: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+  }
+}
+@media (min-width: 1600px) {
+  body {
+    -webkit-perspective: 2000px;
+            perspective: 2000px;
+  }
+}
+body {
+  background: #090909;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  padding: 2em;
+  font-family: 'Raleway';
+  z-index: 5;
+  font-size: 20px;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+.header h1 {
+  font-weight: 400;
+  font-size: 1em;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+.header span {
+  padding: 0.25em;
+  font-size: 0.75em;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+.social {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 0.5em;
+}
+.social a {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0px 0.75em;
+}
+.social a img {
+  width: 100%;
+  height: 100%;
+}
+
+#wall {
+  position: relative;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transform: rotateY(45deg);
+          transform: rotateY(45deg);
+  width: 100%;
+  height: 100%;
+  -webkit-animation: 10s linear move;
+          animation: 10s linear move;
+}
+#wall .row {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  height: 250px;
+  margin-bottom: 10px;
+}
+#wall .row img {
+  height: 100%;
+  margin: 5px;
+}
+#wall .row .frame {
+  position: relative;
+  height: 100%;
+}
+#wall .row .frame .reflection {
+  position: absolute;
+  height: 100%;
+  -webkit-transform: rotateX(180deg) translateY(-10px);
+          transform: rotateX(180deg) translateY(-10px);
+  opacity: 0.25;
+}
+#wall .row .frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, #090909), to(transparent));
+  background: linear-gradient(#090909 75%, transparent);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transform: rotateX(180deg) translateY(-20px);
+          transform: rotateX(180deg) translateY(-20px);
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="header">
+<h1>Reflective Photo Wall</h1><span>by</span><span>Shawn Reisner</span>
+<div class="social"><a target="_blank" href="https://twitter.com/ReisnerShawn"><img class="social" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png" /></a><a target="_blank" href="https://codepen.io/sreisner"><img class="social" src="https://blog.codepen.io/wp-content/uploads/2012/06/Button-White-Large.png" /></a></div>
+</div>
+<div id="wall"></div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script id="rendered-js">
+const NUM_ROWS = 3;
+const NUM_IMAGES = 100;
+const IMAGES = [];
+for (let i = 0; i < NUM_IMAGES; i++) {if (window.CP.shouldStopExecution(0)) break;
+  let width = (Math.floor(Math.random() * 3) + 2) * 100;
+  let height = (Math.floor(Math.random() * 3) + 2) * 100;
+  IMAGES.push(`http://unsplash.it/${width}/${height}`);
+}window.CP.exitedLoop(0);
+
+let rows = [];
+for (let i = 0; i < NUM_ROWS; i++) {if (window.CP.shouldStopExecution(1)) break;
+  let row = document.createElement('div');
+  row.classList.add('row');
+  rows.push(row);
+}window.CP.exitedLoop(1);
+
+let wall = document.getElementById('wall');
+for (let i = 0; i < IMAGES.length; i++) {if (window.CP.shouldStopExecution(2)) break;
+  let index = i % rows.length;
+  let row = rows[index];
+  let onBottomRow = index === rows.length - 1;
+  if (onBottomRow) {
+    let frame = document.createElement('div');
+    frame.classList.add('frame');
+    frame.innerHTML = `
+      <img src="${IMAGES[i]}">
+      <div class="reflection">
+        <img src="${IMAGES[i]}">
+      </div>
+    `;
+    row.appendChild(frame);
+  } else {
+    let img = document.createElement('img');
+    img.src = IMAGES[i];
+    row.appendChild(img);
+  }
+}window.CP.exitedLoop(2);
+
+rows.forEach(row => {
+  wall.appendChild(row);
+});
+
+let debounce = (func, wait, immediate) => {
+  var timeout;
+  return function () {
+    var context = this,args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+let scrollPosition = 0;
+let scrollWall = debounce(event => {
+  scrollPosition -= event.deltaY;
+  wall.style.transform = `rotateY(45deg) translateX(${scrollPosition}px)`;
+}, 10);
+
+window.addEventListener('wheel', scrollWall);
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Logo animation</title>
+<style>
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box.wiggle .sky__1 {
+  animation: sky1 5s infinite;
+}
+
+.box.wiggle .sky__2 {
+  animation: sky2 5s infinite;
+}
+
+.box.wiggle .sky__3 {
+  animation: sky3 5s infinite;
+}
+
+.box.wiggle .sky__4 {
+  animation: sky4 5s infinite;
+}
+
+.box.wiggle .sky__5 {
+  animation: sky5 5s infinite;
+}
+
+.box.wiggle .sky__6 {
+  animation: sky6 5s infinite;
+}
+
+.box.wiggle .sky__7 {
+  animation: sky7 5s infinite;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  animation: intro 0.4s forwards;
+}
+.box.wiggle .top {
+  animation: rotateTop 5s infinite;
+}
+.box.wiggle .bottom {
+  transform: translate(-5px, 105px);
+  animation: rotateBottom 5s infinite;
+}
+.box.wiggle .content__logo {
+  animation: fadeFromTop 5s infinite;
+  animation-delay: 0.3s;
+}
+.box.wiggle .content .seperator {
+  animation: slideIn 5s infinite;
+  animation-delay: 0.4s;
+}
+.box.wiggle .content .text {
+  animation: fadeFromBottom 5s infinite;
+  animation-delay: 0.4s;
+}
+.box.wiggle .content a {
+  animation: fadeFromBottom 5s infinite;
+  animation-delay: 0.5s;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.logo {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 230px;
+  height: 241px;
+}
+.logo .bottom {
+  transform: translate(-5px, 105px);
+}
+.logo path {
+  stroke: #fff;
+}
+
+.sky {
+  position: absolute;
+  -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+.sky__1 {
+  left: -200px;
+  bottom: -340px;
+  z-index: 2;
+}
+.sky__2 {
+  left: -370px;
+  bottom: -200px;
+  z-index: 1;
+}
+.sky__3 {
+  left: -140px;
+  bottom: -182px;
+  z-index: -2;
+}
+.sky__4 {
+  left: -0px;
+  bottom: -170px;
+  z-index: -3;
+}
+.sky__5 {
+  left: -60px;
+  bottom: 0;
+  z-index: -4;
+}
+.sky__6 {
+  left: -70px;
+  bottom: 10px;
+  z-index: 3;
+  transform: rotate(189deg);
+}
+.sky__7 {
+  left: -60px;
+  bottom: 130px;
+  z-index: 3;
+  transform: rotate(186deg);
+}
+
+.content {
+  position: absolute;
+  z-index: 10;
+  bottom: 150px;
+  width: 120px;
+  left: calc(50% - 60px);
+  font-size: 11px;
+  font-family: Helvetica;
+  font-weight: 100;
+}
+.content__logo {
+  max-width: 90px;
+  opacity: 0;
+}
+.content__logo img {
+  width: 100%;
+}
+.content .seperator {
+  width: 0;
+  height: 2px;
+  background: #000;
+  margin: 10px 0;
+  background-image: linear-gradient(to right, #f017f1, #7dddcc);
+}
+.content .text {
+  margin-bottom: 10px;
+  opacity: 0;
+  color: #909090;
+}
+.content a {
+  text-transform: uppercase;
+  color: #616161;
+  opacity: 0;
+}
+
+@keyframes intro {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes rotateTop {
+  20%,
+    70% {
+    transform: rotate(50deg) scale(3) translate(0px, -120px);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes rotateBottom {
+  20%,
+    70% {
+    transform: translate(-185px, 185px) scale(3) rotate(90deg);
+  }
+  100% {
+    transform: rotate(0) scale(1) translate(-5px, 105px);
+  }
+}
+@keyframes sky1 {
+  20%,
+    70% {
+    transform: translateX(130px) rotate(-14deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+@keyframes sky2 {
+  20%,
+    70% {
+    transform: translate(-55px, -15px) rotate(20deg);
+  }
+  100% {
+    transform: translate(0) rotate(0);
+  }
+}
+@keyframes sky3 {
+  20%,
+    70% {
+    transform: translateX(130px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sky4 {
+  20%,
+    70% {
+    transform: translateX(-130px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes sky6 {
+  20%,
+    70% {
+    transform: translateX(-130px) rotate(195deg);
+  }
+  100% {
+    transform: translateX(0) rotate(189deg);
+  }
+}
+@keyframes sky7 {
+  20%,
+    70% {
+    transform: translate(130px, 100px) rotate(190deg);
+  }
+  100% {
+    transform: translate(0) rotate(186deg);
+  }
+}
+@keyframes fadeFromBottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  20%,
+    50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70%,
+    100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+@keyframes fadeFromTop {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  20%,
+    50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70%,
+    100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  20%,
+    50% {
+    opacity: 1;
+    width: 50px;
+  }
+  70%,
+    100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="box">
+<div class="background">
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__1">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-1">
+<stop stop-color="#A0F4AA" offset="0%"></stop>
+<stop stop-color="#45BEFF" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-1)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__2">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-2">
+<stop stop-color="#3D8FFF" offset="0%"></stop>
+<stop stop-color="#4BC4FF" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-2)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__3">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-3">
+<stop stop-color="#5AB0FF" offset="0%"></stop>
+<stop stop-color="#9400FF" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-3)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__4">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-4">
+<stop stop-color="#7F1FFF" offset="0%"></stop>
+<stop stop-color="#CC1BB6" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-4)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__5">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-5">
+<stop stop-color="#F6357F" offset="0%"></stop>
+<stop stop-color="#F820F9" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-5)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__6">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-6">
+<stop stop-color="#F8B000" offset="0%"></stop>
+<stop stop-color="#F66971" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-6)"></path>
+</g>
+</svg>
+<svg width="1273px" height="611px" viewBox="0 0 1273 611" class="sky sky__7">
+<defs>
+<radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="100%" gradientTransform="translate(0.500000,0.000000),scale(0.479687,1.000000),rotate(90.000000),translate(-0.500000,-0.000000)" id="radialGradient-7">
+<stop stop-color="#F8B000" offset="0%"></stop>
+<stop stop-color="#F8F800" offset="100%"></stop>
+</radialGradient>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M-1.59161573e-12,6.41979778 C98.7758233,-13.3170383 168.039836,12.7025848 207.792038,84.4786671 C247.54424,156.254749 317.13968,182.29729 416.578359,162.606288 C481.888319,147.61151 536.04827,172.658042 579.058213,237.745882 C622.068157,302.833723 709.387262,324.251762 841.015529,302 C909.674897,285.578209 970.672933,305.578209 1024.00963,362 C1077.34634,418.421791 1157.19273,423.297879 1263.54882,376.628265 L1273.00474,610.677948 L31.0489882,553.302563 L-1.59161573e-12,6.41979778 Z" id="Path-2" fill="url(#radialGradient-7)"></path>
+</g>
+</svg>
+</div>
+<div class="logo">
+<svg class="top" width="110px" height="110px">
+<g id="Page-1" fill-rule="evenodd">
+<path d="M110,24 C62.5035115,24 24,62.5035115 24,110" id="Path" stroke-width="48"></path>
+</g>
+</svg>
+<svg width="112px" height="133px" class="bottom">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M1,109 C48.4964885,109 87,70.4964885 87,23" id="Path" stroke="#000000" stroke-width="48"></path>
+<path d="M108.491612,47 L0,47 L0,0 L111,0 C111.130272,9.97909847 111.130272,17.6457651 111,23 C110.869728,28.3542349 110.033598,36.3542349 108.491612,47 Z" id="Rectangle" fill="#fff"></path>
+</g>
+</svg>
+</div>
+<div class="content">
+<div class="content__logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="">
+</div>
+<div class="seperator"></div>
+<div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+<a href="/">Read More</a>
+</div>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script id="rendered-js">
+// https://dribbble.com/shots/5441409-Grabient-2-0
+
+setInterval(() => {
+  const { classList } = document.querySelector('.box');
+  if (!classList.contains('wiggle')) {
+    classList.add('wiggle');
+    setTimeout(() => classList.remove('wiggle'), 5000);
+
+    clearInterval();
+  }
+}, 2000);
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>

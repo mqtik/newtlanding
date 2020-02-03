@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Like Cycle</title>
+<style>
+body {
+ background-color: #216BB6;
+ overflow: hidden;
+ text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+body,
+html {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ padding: 0;
+}
+
+svg {
+ max-width: 100%;
+ height: 100%;
+ visibility: hidden;
+ 
+}
+.bush {
+ opacity: 0.2;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<g id="pop" class="pop" fill="none" stroke="#F3F1E2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" opacity="1">
+<circle cx="18.22" cy="17.89" r="0" stroke="#F3F1E2" fill="none" />
+<line x1="18" y1="10.5" x2="18" y2="0.5" />
+<line x1="18" y1="25.5" x2="18" y2="35.5" />
+<line x1="25.5" y1="18" x2="35.5" y2="18" />
+<line x1="10.5" y1="18" x2="0.5" y2="18" />
+</g>
+<path id="dislike" d="M.63,10.86A2.4,2.4,0,0,0,0,12.52,2.52,2.52,0,0,0,2.51,15H7.38a16.46,16.46,0,0,0-.69,4.23v.85A3.36,3.36,0,0,0,10,23.47h.85a.84.84,0,0,0,.82-.63L12.18,21c.62-2.54,2.66-5.37,4.76-5.87a2.52,2.52,0,0,0,2.33,1.6h5a.83.83,0,0,0,.84-.84V.85A.84.84,0,0,0,24.29,0h-5A2.51,2.51,0,0,0,17,1.44L14.15.5A9.25,9.25,0,0,0,11.23,0H4.17A2.52,2.52,0,0,0,1.66,2.54a2.35,2.35,0,0,0,.19.91A2.51,2.51,0,0,0,.63,7.53,2.42,2.42,0,0,0,0,9.19a2.26,2.26,0,0,0,.63,1.67ZM4.18,10H2.51a.84.84,0,0,1-.84-.85.83.83,0,0,1,.84-.84H4.18a.85.85,0,0,0,0-1.7H2.51A.85.85,0,0,1,2.51,5H4.18a.85.85,0,0,0,0-1.7.85.85,0,1,1,0-1.69h7A7.81,7.81,0,0,1,13.56,2L16.73,3V13.37A6.65,6.65,0,0,0,13,15.81a12.16,12.16,0,0,0-2.45,4.71l-.28,1.19H10a1.67,1.67,0,0,1-1.66-1.66V19.2A13.73,13.73,0,0,1,9.16,15h1.73a.85.85,0,0,0,0-1.7H2.48a.85.85,0,0,1-.85-.85.84.84,0,0,1,.85-.84H4.14A.85.85,0,0,0,5,10.73.83.83,0,0,0,4.18,10Z" />
+<path id="bush1" d="M73.88,13.19a13.29,13.29,0,0,0-7.22,2.12A16.74,16.74,0,0,0,48,10.91,26.55,26.55,0,0,0,0,26.58H87.27A13.39,13.39,0,0,0,73.88,13.19Z" fill="#FFF" />
+<path id="bush2" d="M9.88,5.17a9.84,9.84,0,0,1,5.51,1.67A15,15,0,0,1,41.32,8.07,7.5,7.5,0,0,1,43,7.86,7.19,7.19,0,0,1,50.22,15H0A9.87,9.87,0,0,1,9.88,5.17Z" fill="#FFF" />
+<path id="bush3" d="M148.39,51.66C144.67-17.85,37.13-17.85,37.13,55.52v8.17C21.84,56.86,0,64.44,0,87.61V99.93c0,3.72,0,3.72,3.71,3.72H204.09c3.86,0,3.86,0,3.86-3.72V87.61c0-41.15-37.87-53.63-59.56-35.95Z" fill="#FFF" />
+<path id="loveHeart" d="M12.83,19.21l12-10.75a5.59,5.59,0,0,0-9.46-6L12.84,6.43,10.25,2.51a5.59,5.59,0,0,0-10.14,2,5.52,5.52,0,0,0,.69,4Z" />
+<path class="footPath" id="footPath" d="M358.39,460c-.74,0,58.12-35.73,58.12-35.73,7.12-4.09,19,2.25,23,13.25,3.49,9.58,3,20-2.43,22.1-9.8,0-63.57.3-78.68.38" fill="none" stroke="#fff" stroke-miterlimit="10" />
+</defs>
+<ellipse class="shadow" cx="410" cy="470" rx="88" ry="5" opacity="0.2" />
+
+<use class="bush bush1" xlink:href="#bush1" opacity="1" x="800" y="60" />
+<use class="bush bush1" xlink:href="#bush1" opacity="1" x="800" y="90" />
+
+
+
+<use class="bush bush2" xlink:href="#bush2" opacity="1" x="800" y="120" />
+<use class="bush bush2" xlink:href="#bush2" opacity="1" x="800" y="40" />
+
+
+
+<use xlink:href="#footPath" opacity="0" />
+<g class="foot footL">
+<path d="M36.52,16.42h-32A4.47,4.47,0,0,1,0,11.94V4.48A4.48,4.48,0,0,1,5,0l32,3.91A4.48,4.48,0,0,1,41,8.39v3.55A4.47,4.47,0,0,1,36.52,16.42Z" fill="#fff" />
+
+</g>
+<g class="foot footR">
+<path d="M36.52,16.42h-32A4.47,4.47,0,0,1,0,11.94V4.48A4.48,4.48,0,0,1,5,0l32,3.91A4.48,4.48,0,0,1,41,8.39v3.55A4.47,4.47,0,0,1,36.52,16.42Z" fill="#fff" />
+
+</g>
+<g class="heartGroup">
+<use xlink:href="#loveHeart" opacity="1" />
+<use xlink:href="#loveHeart" opacity="1" />
+<use xlink:href="#loveHeart" opacity="1" />
+<use xlink:href="#loveHeart" opacity="1" />
+<use xlink:href="#loveHeart" opacity="1" />
+
+</g>
+<g class="upperBody" transform="translate(10, 0)">
+<g transform="translate(5, -20)" fill="#FFF">
+
+<path class="torso" d="M407.47,262.21q.4-6.33,1.25-12.61a18,18,0,0,0-2.18-11.27,27.58,27.58,0,0,0-14.22-12.68h0a21.46,21.46,0,0,0-14.17.42c-9.7,3.69-17.49,14-23.12,30.77a143.06,143.06,0,0,0-6.22,44.52c0,13.26,2.4,31.32,11.67,42.17h0a25.4,25.4,0,0,0,8,6.35c2.83,1.67,15.53,7.89,35.17-1h0a37,37,0,0,0,11.91-8.13,10.88,10.88,0,0,0,1.58-12.34l-.46-.9a139.88,139.88,0,0,1-4.29-14.16c-.17-1-.35-2-.55-3a4.9,4.9,0,0,0-.61-1.41c-.36-1.69-3.43-21.94-3.76-23.68A172.92,172.92,0,0,1,407.47,262.21Z" />
+<g class="hand">
+<circle cx="468.74" cy="285.01" r="20.82" />
+<rect x="460.77" y="265.14" width="39.15" height="12.54" rx="6.27" ry="6.27" transform="translate(-65.87 349.14) rotate(-37.57)" />
+</g>
+<circle class="headBob" cx="420" cy="180" r="36" fill="#fff" />
+
+</g>
+
+</g>
+<line class="road" stroke-width="0" stroke="#FFF" x1="0" y1="330" x2="800" y2="330" fill="none" stroke="#000" stroke-miterlimit="10" stroke-dasharray="12 36 " stroke-dashoffset="12" />
+<g class="popContainer" />
+</svg>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/TweenMax-latest-beta.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/ScrubGSAPTimeline_debug.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomWiggle.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js'></script>
+<script id="rendered-js">
+var xmlns = "http://www.w3.org/2000/svg",
+xlinkns = "http://www.w3.org/1999/xlink",
+select = function (s) {
+  return document.querySelector(s);
+},
+selectAll = function (s) {
+  return document.querySelectorAll(s);
+},
+bgColour = '#216BB6',
+bezier = MorphSVGPlugin.pathDataToBezier('.footPath', {
+  offsetX: -15,
+  offsetY: -10 }),
+repeats = -1,
+pop = select('.pop'),
+popContainer = select('.popContainer');
+
+var mainTl = new TimelineMax(),
+footLRotateTl = new TimelineMax({ repeat: repeats }),
+footRRotateTl = new TimelineMax({ repeat: repeats }),
+footLTimeTl = new TimelineMax({ repeat: repeats }),
+footRTimeTl = new TimelineMax({ repeat: repeats }),
+footLPathTl = new TimelineMax({ paused: true }),
+footRPathTl = new TimelineMax({ paused: true }),
+footLTl = new TimelineMax({ repeat: repeats }),
+footRTl = new TimelineMax({ repeat: repeats }),
+torsoTl = new TimelineMax({ repeat: repeats }),
+headBobTl = new TimelineMax({ repeat: repeats }),
+handBobTl = new TimelineMax({ repeat: repeats }),
+heartTl = new TimelineMax(),
+roadTl = new TimelineMax({ repeat: repeats }),
+bushesTl = new TimelineMax({ repeat: repeats }).timeScale(0.5);
+
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function createPop(obj) {
+  var popClone = pop.cloneNode(true);
+  //console.log(obj.target._gsTransform)
+  popContainer.appendChild(popClone);
+  TweenMax.set(popClone, {
+    x: obj.target._gsTransform.x,
+    y: obj.target._gsTransform.y });
+
+
+}
+var bodyBounce = CustomEase.create("", "M0,0 C0.468,0.034 0.512,0.356 0.551,0.49 0.587,0.617 0.79,0.972 1,1");
+var smoothSinus = CustomEase.create("", "M0,0 C0.15,0.022 0.374,0.306 0.507,0.512 0.652,0.738 0.876,0.98 1,1");
+footLPathTl.to('.footL', 2, {
+  bezier: {
+    type: "cubic",
+    values: bezier,
+    autoRotate: false },
+
+  ease: Linear.easeNone });
+
+
+
+footRPathTl.to('.footR', 2, {
+  bezier: {
+    type: "cubic",
+    values: bezier,
+    autoRotate: false },
+
+  ease: Linear.easeNone });
+
+
+
+TweenMax.set('svg', {
+  visibility: 'visible' });
+
+TweenMax.set('.foot', {
+  transformOrigin: '80% 50%' });
+
+TweenMax.set(['.shadow'], {
+  transformOrigin: '50% 50%' });
+
+TweenMax.set('.hand', {
+  transformOrigin: '50% 100%' });
+
+TweenMax.set('.heartGroup use', {
+  transformOrigin: '50% 50%' });
+
+footLRotateTl.to('.footL', 0.4, {
+  rotation: 30,
+  ease: Sine.easeIn }).
+
+to('.footL', 0.6, {
+  rotation: -35,
+  ease: Sine.easeIn }).
+
+to('.footL', 0.5, {
+  rotation: 0,
+  ease: Power4.easeOut }).
+
+to({}, 0.5, {});
+
+roadTl.to('.road', 0.85, {
+  //attr: {
+  strokeDashoffset: '+=144',
+  ease: Linear.easeNone,
+  repeat: -1
+  //}
+});
+
+footRRotateTl.to('.footR', 0.4, {
+  rotation: 30,
+  ease: Sine.easeIn }).
+
+to('.footR', 0.6, {
+  rotation: -35,
+  ease: Sine.easeIn }).
+
+to('.footR', 0.5, {
+  rotation: 0,
+  ease: Power4.easeOut }).
+
+to({}, 0.5, {});
+
+
+footLTimeTl.to(footLPathTl, 2, {
+  time: footLPathTl.duration(),
+  ease: smoothSinus });
+
+
+footRTimeTl.to(footRPathTl, 2, {
+  time: footRPathTl.duration(),
+  ease: smoothSinus });
+
+
+heartTl.staggerFromTo('.heartGroup use', 2, {
+  x: 480,
+  y: 240,
+  alpha: 1,
+  scale: 0.3,
+  fill: "#FFF" },
+{
+  cycle: {
+    x: function () {
+      return randomBetween(490, 580);
+    },
+    y: function () {
+      return randomBetween(40, 100);
+    },
+    duration: [11, 8, 9, 10] },
+
+  alpha: 0,
+  fill: bgColour,
+  scale: 2,
+  ease: Circ.easeOut,
+  repeat: -1,
+  onComplete: createPop,
+  onCompleteParams: ['{self}'] },
+0.6);
+
+
+torsoTl.to('.upperBody', 0.5, {
+  y: 20,
+  ease: smoothSinus,
+  repeat: 1,
+  yoyo: true })
+
+/* .from('.codepenLogo',0.5, {
+                 rotation: 10,
+                 transformOrigin: '50% 100%',
+                 ease: smoothSinus,
+                 repeat: 3,
+                 yoyo: true
+                }, 0) */.
+to('.shadow', 0.5, {
+  ease: smoothSinus,
+  scaleX: 1.1,
+  repeat: 1,
+  yoyo: true },
+0);
+
+headBobTl.to('.headBob', 0.5, {
+  y: 7,
+  ease: smoothSinus,
+  repeat: 3,
+  yoyo: true });
+
+handBobTl.to('.hand', 0.32, {
+  y: 3,
+  rotation: 6,
+  ease: CustomWiggle.create('', { type: 'easeInOut', wiggles: 1 })
+  //repeat: 2,
+  //repeatDelay: 2,
+  //yoyo: true
+}).
+to('.hand', 0.32, {
+  y: 3,
+  delay: 0.5,
+  rotation: 6,
+  ease: CustomWiggle.create('', { type: 'easeInOut', wiggles: 1 }),
+  repeat: 2
+  //repeatDelay: 2,
+  //yoyo: true
+}).
+to('.hand', 0.32, {
+  y: 3,
+  delay: 1,
+  rotation: 6,
+  ease: CustomWiggle.create('', { type: 'easeInOut', wiggles: 1 }),
+  repeat: 1
+  //repeatDelay: 2,
+  //yoyo: true
+}).
+to({}, 1.5, {});
+
+bushesTl.staggerTo('.bush1', 5, {
+  attr: {
+    x: -150 },
+
+  cycle: {
+    duration: [19, 16, 22, 15] },
+
+  repeat: -1,
+  ease: Linear.easeNone },
+1).
+staggerTo('.bush2', 5, {
+  attr: {
+    x: -150 },
+
+  cycle: {
+    duration: [17, 21, 23, 26],
+    repeatDelay: [2, 3, 4] },
+
+  repeat: -1,
+  ease: Linear.easeNone },
+1, 0);
+/* .staggerTo('.bush3', 5, {
+        attr: {
+         x: -220
+        },
+        cycle: {
+         duration: [11,15]
+        },
+        repeat: -1,
+        ease: Linear.easeNone
+       }, 11, 0) */
+//Draggable.create('.road', {})
+
+footLTl.add([footLTimeTl, footLRotateTl]);
+footRTl.add([footRTimeTl, footRRotateTl]);
+
+mainTl.add(footLTl, 0).
+add(footRTl, 1).
+add(torsoTl, 0.75).
+add(headBobTl, 0.85).
+add(handBobTl, 0.9).
+add(heartTl, 0).
+add(bushesTl, 0).
+seek(100);
+
+
+TweenMax.globalTimeScale(1.42);
+//mainTl.add(torsoTl, 0.5)
+//mainTl.add(footRRotateTl, 1)
+//ScrubGSAPTimeline(mainTl);
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>
