@@ -18,14 +18,14 @@
       <div class="grid">
             <div class="grid-col-6 d-flex align-items-center">
 
-                <div class="burger-container">
+                <div class="burger-container hidden-md hidden-lg">
                     <div id="burger">
                         <div class="bar topBar"></div>
                         <div class="bar btmBar"></div>
                     </div>
 
                 </div>
-                 <object type="image/svg+xml" data="assets/logos/logo_white.svg" style="width: 40px;">
+                 <object type="image/svg+xml" data="assets/logos/logo_white.svg" style="width: 40px;margin-top: 4px;">
                           Your browser does not support SVG
                         </object>
                 <div class="icon icon-apple"></div>
@@ -111,7 +111,7 @@
                       <div class='pluto'></div>
                       <div class='asteroids-belt'></div>
                     </div>
-                    <div style="z-index: 9; position: absolute; right:0;width: 50%; ">
+                    <div style="z-index: 9; position: absolute; right:0;width: 50%;" class="hidden-xs hidden-sm">
                       <object type="image/svg+xml" data="assets/svg/illustration_69.svg" style="right: 0;margin-left: 0%; width: 100%;z-index:1;">
                       Your browser does not support SVG
                     </object>
@@ -166,7 +166,7 @@
                   </object-->
                 </div>
                 <div class="grid-col-12 grid-col-md-8" style="text-align: center;">
-                    <h2 class="text-bold text-header project project-2" style="font-size: 4rem;">Faster, <span style="color: #ff7675;">and faster,</span><br />and faster<br /> <span class="telefonBlack">with time</span></h2>
+                    <h2 class="text-bold text-header" style="font-size: 4rem;">Faster, <span style="color: #ff7675;">and faster,</span><br />and faster<br /> <span class="telefonBlack">with time</span></h2>
                     <p>
                       A runaway universe.<br/>
                     </p>
@@ -183,11 +183,11 @@
             <div class="grid" style="margin-top: 10%;">
                 
                 <div class="grid-col-12 grid-col-md-6">
-                  <h2 class="text-bold text-header text-header-sub">
-                    Private
-                  <br /> <span style="color: #ff7675;" class="telefonBlack">shelve</span><br />
-                  until it's ready
-                  </h2>
+                  <!--h2 class="text-bold text-header text-header-sub">
+                    Write on your
+                  <br /> <span class="telefonBlack redFont">drafts</span><br />
+                    first.
+                  </h2-->
                     <p>If you're looking for a sign to write, <span style="background-color: rgba(71, 204, 38, 0.2);">this is it</span></p>
 
                     <p>
@@ -210,7 +210,7 @@
                 </div>
 
                 <div class="grid-col-12 grid-col-md-6">
-                  <div style="max-width: 550px">
+                  <div style="max-width: 550px" class="scaleDownPhone">
                     <div class="phone phonebackview">
                         <div class="shutdown-button"></div>
                         <div class="volumeup-button"></div>
@@ -252,11 +252,11 @@
                 </div>
 
                <div class="grid-col-12 grid-col-md-6">
-                    <h2 class="text-bold text-header text-header-sub">Take some <span style="color: #ff7675;" class="telefonBlack">time</span><br />to get along.
+                    <h2 class="text-bold text-header text-header-sub">Take some <br /><span class="redFont telefonBlack">time</span><br />to get along.
                     </h2>
                     <p>Change is never easy.</p>
                     <p>
-                      Find free access to lot of features, both for writing and reading.<br />
+                      Find free access to lots of features, both for writing and reading.<br />
                       We got really creative with Newt, making really simple to perform complex tasks, creating roles for a collaborative writing/editing and a fully synchronization system to always stay up to date with the latest public work.
                     </p>
                     <p>
@@ -276,14 +276,14 @@
                     <h2 class="text-bold text-header text-header-sub">
                       Put your<br />
                       story to<br />
-                      <span style="color: #ff7675;" class="telefonBlack">work</span>
+                      <span style="color: #ff7675;" class="telefonBlack redFont">work</span>
                     </h2>
                     <p>
-                      In Newt, a book has a lot of revisions. People from all over the world can read and edit some part and send it to you, for you to approve or reject. Isn't that sweet?
+                      In Newt, a book has a lot of revisions. People from all over the world can read and send a change request to you, for you to approve or reject. Isn't that sweet?
                     </p>
                     <p>
-                        Bear in mind that your book will always be private by default, and if you want to publish it is very easy in the app. <br />
-                        You set the terms, disabling the Contribute feature, allowing people to read the book but not be able to modify it in any way.
+                        Bear in mind that your book will always be Private by default, as well as the Pull Request. <br />
+                        You set the terms and control everything around your work.
                     </p>
                 </div>
                 
@@ -295,7 +295,7 @@
                
             </div>
 
-            <div class="grid" style="margin-top: 10%;">
+            <div class="grid" style="margin-top: 20%;">
               
               <div class="grid-col-12 grid-col-md-6">
                   <object type="image/svg+xml" data="assets/svg/illustration_99.svg" style="margin-left: -10%; width: 100%;">
@@ -306,10 +306,14 @@
                <div class="grid-col-12 grid-col-md-6">
 
                     <h2 class="text-bold text-header text-header-sub">
-                      Nothing sounds<br />crazy<br />
-                      <span style="color: #ff7675;" class="telefonBlack">anymore</span>
+                      Make <br />your <br/>stories<br/>
+                      <span style="position: absolute;left: 160px;top: 73px;" class="telefonBlack redFont">fly</span>
+
                     </h2>
-                    <p>
+                </div>
+               
+               <div class="grid-col-12 grid-col-md-12 text-center">
+                  <p>
                       We encourage you to publish in Newt! There are lots of resources for writers.<br />
                       Setting the book to status Public, means that it will be available for everyone in the world to discover.
                       It also means that the rights of the book are yours and yours only. We only stand as a bridge.<br />
@@ -320,6 +324,7 @@
                       <strong>Pull Request</strong>
                     </p>
                 </div>
+
                
             </div>
 
@@ -349,7 +354,7 @@
         <div class="container">
             <div class="grid">
 
-                <div class="grid-col-3">
+                <div class="grid-col-md-3 grid-col-sm-6 grid-col-xs-12">
                     <h2 class="text-bold text-header project-0 text-header-sub text-header-b text-header-black" style="color: #fff;font-size: 2rem !important; margin-bottom: 0px;">
                       <span style="color: #fff; font-family: 'Telefon Black';">Explore
                       </span>
@@ -358,21 +363,21 @@
                       </h2>
                     <p style="font-size: 1rem; color: #7d7d7d;">Explore <span style="color: #fff;">countless authors</span> with great stories, thinkings, courses, articles, news and more. </p>
                 </div>
-                <div class="grid-col-3">
+                <div class="grid-col-md-3 grid-col-sm-6 grid-col-xs-12">
                   <h2 class="text-bold text-header project-0 text-header-sub text-header-b text-header-black" style="color: #fff;font-size: 2rem !important; margin-bottom: 0px;">
                       <span style="color: #fff; font-family: 'Telefon Black';">Contribute
                       </span>
                       </h2>
                     <p style="font-size: 1rem; color: #7d7d7d;">Help authors edit the final version of the book sending them <span style="color: #fff;">pull request</span> to approve, reviews, comments, and more.</p>
                 </div>
-                <div class="grid-col-3">
+                <div class="grid-col-md-3 grid-col-sm-6 grid-col-xs-12">
                   <h2 class="text-bold text-header project-0 text-header-sub text-header-b text-header-black" style="color: #fff;font-size: 2rem !important; margin-bottom: 0px;">
                       <span style="color: #fff; font-family: 'Telefon Black';">Members
                       </span>
                       </h2>
                     <p style="font-size: 1rem; color: #7d7d7d;">You're free to <span style="color: #fff;">make Newt your own</span>. Sign up anytime. Cancel whenever you want.</p>
                 </div>
-                <div class="grid-col-3">
+                <div class="grid-col-md-3 grid-col-sm-6 grid-col-xs-12">
                   <h2 class="text-bold text-header project-0 text-header-sub text-header-b text-header-black" style="color: #fff;font-size: 2rem !important; margin-bottom: 0px;">
                       <span style="color: #fff; font-family: 'Telefon Black';">
                         Disclaimer

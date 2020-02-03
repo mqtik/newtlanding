@@ -201,9 +201,75 @@ h2 {
 .grid .grid-col-12 {
   grid-column: span 12;
 }
+.redFont {
+  color: #ff7675;font-family: 'Telefon Black';font-size: 6rem;
+}
+@media (max-width: 1100px){
+  .hidePhoneScaled {
+    display: none !important;
+  }
+}
 @media (max-width: 48rem){
+
+  nav.container {
+    margin: 0;
+  }
+  .header ul.menu {
+    padding: 0px 20px 0 !important;
+  }
+  .redFont {
+    font-size: 4rem;
+  }
+  .scaleDownPhone {
+    transform: scale(0.7)
+  }
+  .scaleDownPhoneCenter {
+    margin-left: -20px;
+  }
+  .scaleDownPhoneCenter:before {
+    overflow: hidden;
+  }
+  .containerTags p {
+    display: inline-grid !important;
+  }
   .hidden-sm {
     display: none;
+  }
+  .grid .grid-col-xs-1 {
+    grid-column: span 1;
+  }
+  .grid .grid-col-xs-2 {
+    grid-column: span 2;
+  }
+  .grid .grid-col-xs-3 {
+    grid-column: span 3;
+  }
+  .grid .grid-col-xs-4 {
+    grid-column: span 4;
+  }
+  .grid .grid-col-xs-5 {
+    grid-column: span 5;
+  }
+  .grid .grid-col-xs-6 {
+    grid-column: span 6;
+  }
+  .grid .grid-col-xs-7 {
+    grid-column: span 7;
+  }
+  .grid .grid-col-xs-8 {
+    grid-column: span 8;
+  }
+  .grid .grid-col-xs-9 {
+    grid-column: span 9;
+  }
+  .grid .grid-col-xs-10 {
+    grid-column: span 10;
+  }
+  .grid .grid-col-xs-11 {
+    grid-column: span 11;
+  }
+  .grid .grid-col-xs-12 {
+    grid-column: span 12;
   }
 }
 @media (min-width: 48rem) {
@@ -246,7 +312,7 @@ h2 {
 }
 @media (min-width: 48rem) and (min-width: 64rem) {
   .hidden-md {
-    display: none;
+    display: none !important;
   }
   .grid .grid-col-md-1 {
     grid-column: span 1;
@@ -287,7 +353,7 @@ h2 {
 }
 @media (min-width: 48rem) and (min-width: 85.375rem) {
   .hidden-lg {
-    display: none;
+    display: none !important;
   }
   .grid .grid-col-lg-1 {
     grid-column: span 1;
@@ -1706,7 +1772,7 @@ button,
 }
 @media screen and (max-width: 30rem) {
   .shuffledCovers {
-    width: 20rem;
+    width: 18rem;
     height: 62rem;
     background-size: 18rem 18rem, 17rem 17rem, 10rem 10rem;
     background-position: 1.5rem 7rem, 0rem 25rem, 7rem 42rem;
@@ -2501,6 +2567,7 @@ li {
 }
 
 .phonelineless:after {
+  position: unset !important;
   background: transparent !important;
 }
 .phonewhite .notch {
@@ -2533,7 +2600,7 @@ li {
     content: "";
     display: block;
     height: 4px;
-    width: 448px;
+
     background: #ff7675;
     right: 0;
     bottom: 0;
@@ -2694,6 +2761,13 @@ li {
 .getApp a {
   color: #fff !important;
   font-family: 'Telefon Black';
+}
+@media (max-width: 1024px){
+  .getApp {
+    height: 31px;
+    padding-top: 4px;
+    margin-top:2px;
+  }
 }
 /* end navbar */
 
@@ -3138,6 +3212,11 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
 
 
 /* ######## SOLAR SYSTEMM *****###### */
+@media (max-width: 700px){
+  .solar-syst {
+    display: none;
+  }
+}
 .solar-syst {
   margin: 0 auto;
   width: 100%;
@@ -3440,11 +3519,11 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
 .wave {
   overflow: hidden;
   position: absolute;
-  width: 140%;
+  width: 100%;
   transform: translateY(-50%);
   color: #fff;
   margin-left: -20%;
-  bottom: -150px;
+  bottom: -95px;
   z-index: 1;
   animation: 3s ease-in-out infinite alternate waveAnimateA;
 }

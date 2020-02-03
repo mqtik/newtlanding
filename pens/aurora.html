@@ -1,20 +1,20 @@
 
 <!DOCTYPE html>
-<html lang=&quot;en&quot; >
+<html lang="en" >
 
 <head>
 
-  <meta charset=&quot;UTF-8&quot;>
+  <meta charset="UTF-8">
   
-<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
-<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
 
-<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 
-<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+<link rel="mask-icon" type=" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
-  <title>CodePen - Aurora</title>
+  <title>Aurora</title>
   
   
   
@@ -41,13 +41,12 @@ html, body {
 
 </head>
 
-<body translate=&quot;no&quot; >
+<body translate="no" >
   
-    <script src=&quot;https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js&quot;></script>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
   
-      <script id=&quot;rendered-js&quot; >
+      <script id="rendered-js" >
 function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}class BackgroundMaterial extends THREE.RawShaderMaterial {
 
 
@@ -56,7 +55,7 @@ function _defineProperty(obj, key, value) {if (key in obj) {Object.definePropert
 
 
   constructor() {
-    super(BackgroundMaterial.shader);_defineProperty(this, &quot;resize&quot;,
+    super(BackgroundMaterial.shader);_defineProperty(this, "resize",
 
 
 
@@ -67,12 +66,12 @@ function _defineProperty(obj, key, value) {if (key in obj) {Object.definePropert
       window.innerWidth * window.devicePixelRatio,
       window.innerHeight * window.devicePixelRatio);
 
-    });_defineProperty(this, &quot;loop&quot;,
+    });_defineProperty(this, "loop",
 
     timestamp => {
       requestAnimationFrame(this.loop);
       this.uniforms.globalTime.value = timestamp / 1000;
-    });addEventListener('resize', this.resize);requestAnimationFrame(this.loop);}}_defineProperty(BackgroundMaterial, &quot;shader&quot;, { vertexShader: `
+    });addEventListener('resize', this.resize);requestAnimationFrame(this.loop);}}_defineProperty(BackgroundMaterial, "shader", { vertexShader: `
       attribute vec3 position;
 
       uniform mat4 projectionMatrix;
@@ -219,7 +218,7 @@ function _defineProperty(obj, key, value) {if (key in obj) {Object.definePropert
         gl_FragColor.rgb += result;
       }
 
-    `, uniforms: { resolution: { value: new THREE.Vector2(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio) }, globalTime: { value: performance.now() / 1000 } }, side: THREE.BackSide });class MountainMaterial extends THREE.ShaderMaterial {constructor() {super(MountainMaterial.shader);}}_defineProperty(MountainMaterial, &quot;shader&quot;, { vertexShader: `
+    `, uniforms: { resolution: { value: new THREE.Vector2(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio) }, globalTime: { value: performance.now() / 1000 } }, side: THREE.BackSide });class MountainMaterial extends THREE.ShaderMaterial {constructor() {super(MountainMaterial.shader);}}_defineProperty(MountainMaterial, "shader", { vertexShader: `
       uniform vec3 mvPosition;
 
       varying vec2 vUv;
@@ -294,7 +293,7 @@ function _defineProperty(obj, key, value) {if (key in obj) {Object.definePropert
           gl_FragColor.rgb = mix(gl_FragColor.rgb, fogColor, fogFactor);
         #endif
       }
-    `, uniforms: THREE.UniformsLib.fog, fog: true, transparent: true });class TreeMaterial extends THREE.RawShaderMaterial {constructor() {super(TreeMaterial.shader);_defineProperty(this, &quot;loop&quot;, timestamp => {requestAnimationFrame(this.loop);this.uniforms.globalTime.value = timestamp / 1000;});requestAnimationFrame(this.loop);}}_defineProperty(TreeMaterial, &quot;shader&quot;, { vertexShader: `
+    `, uniforms: THREE.UniformsLib.fog, fog: true, transparent: true });class TreeMaterial extends THREE.RawShaderMaterial {constructor() {super(TreeMaterial.shader);_defineProperty(this, "loop", timestamp => {requestAnimationFrame(this.loop);this.uniforms.globalTime.value = timestamp / 1000;});requestAnimationFrame(this.loop);}}_defineProperty(TreeMaterial, "shader", { vertexShader: `
       attribute vec3 position;
       attribute vec2 uv;
 
@@ -358,7 +357,7 @@ function _defineProperty(obj, key, value) {if (key in obj) {Object.definePropert
 
         gl_FragColor = vec4(max(col.rgb * p.y, vec3(0.0)), col.a);
       }
-    `, uniforms: { globalTime: { value: performance.now() / 1000 } }, transparent: true });class Scene {constructor() {_defineProperty(this, &quot;onWindowResize&quot;, () => {this.camera.aspect = window.innerWidth / window.innerHeight;this.camera.updateProjectionMatrix();this.renderer.setSize(window.innerWidth, window.innerHeight);});_defineProperty(this, &quot;update&quot;, timestamp => {requestAnimationFrame(this.update);this.renderer.render(this.scene, this.camera);});this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 5000);this.camera.position.z = 40;this.scene = new THREE.Scene();this.scene.fog = new THREE.Fog(0xFF00FF, 40, 180);this.renderer = new THREE.WebGLRenderer({ antialias: true });this.renderer.setPixelRatio(window.devicePixelRatio);this.renderer.setSize(window.innerWidth, window.innerHeight);document.body.appendChild(this.renderer.domElement);this.clock = new THREE.Clock();window.addEventListener('resize', this.onWindowResize);const backgroundGeometry = new THREE.SphereGeometry(4000, 32, 15);const backgroundMaterial = new BackgroundMaterial();const background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);this.scene.add(background);const treeGeometry = new THREE.PlaneGeometry(200, 200, 1, 1);const treeMaterial = new TreeMaterial();this.tree = new THREE.Mesh(treeGeometry, treeMaterial);this.tree.position.z = 0.1;this.scene.add(this.tree);MountainMaterial.uniforms = { fogColor: { value: this.scene.fog.color }, fogNear: { value: this.scene.fog.near }, fogFar: { value: this.scene.fog.far } };const mountainMaterial = new MountainMaterial();const mountainGeometry = new THREE.PlaneGeometry(600, 200, 1, 1);const mountain = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain.position.set(0, 0, 0);const mountain2 = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain2.position.set(0, -2, -26);const mountain3 = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain3.position.set(0, 0, -35);this.scene.add(mountain);this.scene.add(mountain2);this.scene.add(mountain3);requestAnimationFrame(this.update);}}new Scene();
+    `, uniforms: { globalTime: { value: performance.now() / 1000 } }, transparent: true });class Scene {constructor() {_defineProperty(this, "onWindowResize", () => {this.camera.aspect = window.innerWidth / window.innerHeight;this.camera.updateProjectionMatrix();this.renderer.setSize(window.innerWidth, window.innerHeight);});_defineProperty(this, "update", timestamp => {requestAnimationFrame(this.update);this.renderer.render(this.scene, this.camera);});this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 5000);this.camera.position.z = 40;this.scene = new THREE.Scene();this.scene.fog = new THREE.Fog(0xFF00FF, 40, 180);this.renderer = new THREE.WebGLRenderer({ antialias: true });this.renderer.setPixelRatio(window.devicePixelRatio);this.renderer.setSize(window.innerWidth, window.innerHeight);document.body.appendChild(this.renderer.domElement);this.clock = new THREE.Clock();window.addEventListener('resize', this.onWindowResize);const backgroundGeometry = new THREE.SphereGeometry(4000, 32, 15);const backgroundMaterial = new BackgroundMaterial();const background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);this.scene.add(background);const treeGeometry = new THREE.PlaneGeometry(200, 200, 1, 1);const treeMaterial = new TreeMaterial();this.tree = new THREE.Mesh(treeGeometry, treeMaterial);this.tree.position.z = 0.1;this.scene.add(this.tree);MountainMaterial.uniforms = { fogColor: { value: this.scene.fog.color }, fogNear: { value: this.scene.fog.near }, fogFar: { value: this.scene.fog.far } };const mountainMaterial = new MountainMaterial();const mountainGeometry = new THREE.PlaneGeometry(600, 200, 1, 1);const mountain = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain.position.set(0, 0, 0);const mountain2 = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain2.position.set(0, -2, -26);const mountain3 = new THREE.Mesh(mountainGeometry, mountainMaterial);mountain3.position.set(0, 0, -35);this.scene.add(mountain);this.scene.add(mountain2);this.scene.add(mountain3);requestAnimationFrame(this.update);}}new Scene();
 //# sourceURL=pen.js
     </script>
 

@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>Random words floating</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>
+@import url(https://fonts.googleapis.com/css?family=VT323);
+html {
+  background-color: #0c0a0e;
+  font-family: "M+ 1mn", "VT323", monospace;
+  font-size: 2.2vmax;
+  line-height: 1.75em;
+  overflow: hidden;
+}
+
+.quote {
+  cursor: default;
+  color: #00331a;
+  margin: 0 auto 0;
+  max-width: 82vw;
+  -webkit-perspective: 1000vmin;
+          perspective: 1000vmin;
+  width: 33rem;
+}
+
+.quote span {
+  border-radius: 0.3em;
+  display: inline-block;
+  padding: 0 0.25em;
+  margin: 0.1em 0.1em;
+  -webkit-transform: translateZ(-500vmin) rotateX(90deg);
+          transform: translateZ(-500vmin) rotateX(90deg);
+  -webkit-transition: background 2s ease-in, color 5s ease-out, text-shadow 0.5s ease-out, -webkit-transform 15s ease-in;
+  transition: background 2s ease-in, color 5s ease-out, text-shadow 0.5s ease-out, -webkit-transform 15s ease-in;
+  transition: background 2s ease-in, color 5s ease-out, text-shadow 0.5s ease-out, transform 15s ease-in;
+  transition: background 2s ease-in, color 5s ease-out, text-shadow 0.5s ease-out, transform 15s ease-in, -webkit-transform 15s ease-in;
+}
+
+.quote .highlight, .quote span:hover {
+  background: rgba(0, 255, 128, 0.1);
+  color: #80ffc0;
+  text-shadow: 0 0 0.6em #00ff80;
+  -webkit-transform: translateZ(0) rotateX(0deg);
+          transform: translateZ(0) rotateX(0deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  z-index: 9001;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class="quote" id="neat">A year here and he still dreamed of cyberspace, hope fading nightly. All the speed he took, all the turns he'd taken and the corners he cut in Night City, and he'd still see the matrix in his dreams, bright lattices of logic unfolding across that colourless void... The Sprawl was a long, strange way home now over the Pacific, and he was no Console Man, no cyberspace cowboy. Just another hustler, trying to make it through. But the dreams came on in the Japanese night like livewire voodoo, and he'd cry for it, cry in his sleep, and wake alone in the dark, curled in his capsule in some coffin hotel, hands clawed into the bedslab, temper foam bunched between his fingers, trying to reach the console that wasn't there.</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script id="rendered-js">
+var eQuote = document.querySelector("#neat");
+
+var regex = /\ /;
+// save the original paragraph as array of words
+// regex = /[,.?!;:]/; /* Uncomment for sentences */
+var aQuote = eQuote.innerHTML.split(regex);
+
+// wrap each word with a span
+eQuote.innerHTML = "";
+for (var word in aQuote) {
+  eQuote.innerHTML += "<span>" + aQuote[word] + "</span>";
+}
+// ...and save them for later
+var eWords = document.querySelectorAll("span");
+
+
+var repeat = setInterval(function () {
+  if (Math.random() > 0.85) fClearAllHighlights(eQuote);
+  fHighlightRandomWord(eWords);
+}, 275);
+
+function fHighlightRandomWord(e) {
+  var iRandom = Math.floor(Math.random() * e.length);
+  e[iRandom].classList.add("highlight");
+}
+
+function fClearAllHighlights(e) {
+  var nlHighlights = e.querySelectorAll(".highlight");
+  // convert the nodeList into an array
+  var aHighlights = Array.prototype.slice.call(nlHighlights);
+  // remove .highlight from the spans which have it
+  Array.prototype.map.call(aHighlights, function () {
+    arguments[0].classList.remove("highlight");
+  });
+}
+//# sourceURL=pen.js
+    </script>
+</body>
+</html>

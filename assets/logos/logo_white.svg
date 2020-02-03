@@ -4,39 +4,39 @@
 </mask>
 <g mask="url(#mask0)">
 <g filter="url(#filter0_d)">
-<rect x="283" y="142" width="184.757" height="184.757" rx="30" transform="rotate(45 283 142)" fill="#000"/>
+<rect x="283" y="142" width="184.757" height="184.757" rx="30" transform="rotate(45 283 142)" fill="#ff7675"/>
 </g>
 <g filter="url(#filter1_d)">
-<rect x="591" y="142" width="184.757" height="184.757" rx="30" transform="rotate(45 591 142)" fill="#000"/>
+<rect x="591" y="142" width="184.757" height="184.757" rx="30" transform="rotate(45 591 142)" fill="#ff7675"/>
 </g>
 <g filter="url(#filter2_d)">
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 437 298.273)" fill="#000"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 437 298.273)" fill="#ff7675"/>
 </g>
 <g filter="url(#filter3_d)">
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 283 450.539)" fill="#DFE6E9"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 283 450.539)" fill="#000"/>
 </g>
 <g filter="url(#filter4_d)">
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591 452.543)" fill="#DFE6E9"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591 452.543)" fill="#000"/>
 </g>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 744 605.543)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 438.529 603)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591.529 756)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 -23.4712 450)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 132.057 602.461)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 285.057 755.461)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 436.529 0)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591.529 -147)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 284.529 -167)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 -24.4712 141)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 130.529 -6)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 743.529 0)" fill="rgba(0,0,0,.04)"/>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 898.529 142)" fill="rgba(0,0,0,.04)"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 744 605.543)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 438.529 603)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591.529 756)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 -23.4712 450)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 132.057 602.461)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 285.057 755.461)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 436.529 0)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 591.529 -147)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 284.529 -167)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 -24.4712 141)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 130.529 -6)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 743.529 0)" fill="transparent"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 898.529 142)" fill="transparent"/>
 <g filter="url(#filter5_d)">
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 745 296.27)" fill="#DFE6E9"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 745 296.27)" fill="#000"/>
 </g>
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 898 449.27)" fill="rgba(0,0,0,.04)"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 898 449.27)" fill="transparent"/>
 <g filter="url(#filter6_d)">
-<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 129.529 295.268)" fill="#000"/>
+<rect width="184.757" height="184.757" rx="30" transform="matrix(0.706488 0.707725 -0.706488 0.707725 129.529 295.268)" fill="#ff7675"/>
 </g>
 <rect x="1.00175" y="0.999998" width="870.001" height="870.001" rx="99" transform="matrix(1 0 0.0017496 0.999998 -0.0017648 1.60932e-06)" stroke="#E2E2E2" stroke-width="2"/>
 </g>
