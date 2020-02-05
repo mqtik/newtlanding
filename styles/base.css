@@ -2,7 +2,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
 
-@import url('https://fonts.googleapis.com/css?family=Raleway|Reem+Kufi&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Reem+Kufi|Righteous&display=swap');
 
 /**
  * Set the way the browser calculates margins and padding to border-box instead
@@ -2777,11 +2777,13 @@ li {
   margin: 0;
   position: relative;
   color: #000000;
-  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15)
+  /*text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15)
+ 
  /* 
  text-shadow: 0 -1px 0px rgba(243, 65, 0, 0.6), 0 -2px 0px rgba(208, 56, 0, 0.8);
+ */
  text-shadow:
-    -4px 4px 0 rgba(246, 66, 66, 0.6), 4px -4px 0 rgba(246, 66, 66, 0.6);*/
+    -4px 4px 0 rgba(191, 191, 191, 0.6), 4px -4px 0 rgba(216, 216, 216, 0.6);
     /*text-shadow:
     1px 1px 0 #fff,
     -1px -1px 0 #fff,
@@ -3574,3 +3576,32 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
   }
 }
 
+.h1Title {
+  color: white;
+  /*font-family: 'Righteous', serif;
+  font-size: 3em; */
+  text-shadow: .03em .03em 0 hsl(213, 63%, 25%);
+  }
+
+.h1Title:after {
+    content: attr(data-shadow);
+    z-index: -1;
+    text-shadow: none;
+    background-image:linear-gradient(
+        45deg,
+        transparent 45%,
+        hsl(0, 0%, 0%) 45%,
+        hsl(0, 0%, 0%) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: shad-anim 25s linear infinite;
+    }
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+  }
