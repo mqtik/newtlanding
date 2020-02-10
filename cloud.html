@@ -46,7 +46,7 @@
   left: 0;
   top: 0;
   background: rgba(135, 0, 0, 0.6);
-  background: linear-gradient(to right, #141562, #486FBC, #EAB5A1, #8DD6FF, #4973C9, #D07CA7, #F4915E, #F5919E, #B46F89, #141562, #486FBC);
+  background: linear-gradient(to right, #621414, #bc4848, #eaa1a1, #ff8d8d, #c94949, #D07CA7, #F4915E, #F5919E, #B46F89, #bc4848, #621414);
   background-position: 0% 50%;
   background-size: 1000% 1000%;
   visibility: hidden;
@@ -717,6 +717,10 @@
 
    <header class="header position-absolute w-100">
 
+
+
+    
+
     <nav class="container" style="padding: 0;">
       <div class="grid">
             <div class="grid-col-6 d-flex align-items-center">
@@ -792,8 +796,53 @@
 
     <section class="section section-top section-cloud-top">
 
-
-      <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" class="svg-clouds">
+      <div class="containerPlanets">
+      <!-- stars -->
+      <div class="star star-1"></div>
+      <div class="star star-2"></div>
+      <div class="star star-3"></div>
+      <!-- clouds -->
+      <div class="cloud-group-1">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+        <div class="cloud cloud-6"></div>
+      </div>
+      <div class="cloud-group-2">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+        <div class="cloud cloud-6"></div>
+      </div>
+      <div class="cloud-group-3">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+        <div class="cloud cloud-5"></div>
+        <div class="cloud cloud-6"></div>
+      </div>
+      <!-- orbits -->
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <div class="orbit orbit-4"></div>
+      <div class="orbit orbit-5"></div>
+      <div class="orbit orbit-6"></div>
+      <!-- main planet -->
+      <div class="ring-before"></div>
+      <div class="ring-bigger-before"></div>
+      <div class="planet"></div>
+      <div class="ring-after"></div>
+      <div class="ring-bigger-after"></div>
+      <!-- sub planet -->
+      <div class="sub-planet"></div>
+    </div>
+      <!--svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg" class="svg-clouds">
           <defs>
           <path id="bigHeart" d="M484.8,310.1L390,391l-93.6-80.9l0.1,0c-15.2-14.3-23.5-35.8-19.4-59.2c4.7-26.6,26.5-47.9,53.1-52.2
             c24.2-3.9,46.4,5.6,60.4,22.3c14-16.6,36.2-26.1,60.4-22.2c26.6,4.3,48.4,25.6,53.1,52.2C508.3,274.3,500,295.8,484.8,310.1z" />
@@ -819,50 +868,53 @@
           </g>
           <g class="heartContainerInv" mask="url(#cloudMaskInv)">
           </g>
-          </svg>
+          </svg-->
 
-          <div class="gradient"></div>
+
             <div class="wave">
               <svg viewBox="0 0 1440 120" aria-hidden="true">
               <path d="M1440,21.2101911 L1440,120 L0,120 L0,21.2101911 C120,35.0700637 240,42 360,42 C480,42 600,35.0700637 720,21.2101911 C808.32779,12.416393 874.573633,6.87702029 918.737528,4.59207306 C972.491685,1.8109458 1026.24584,0.420382166 1080,0.420382166 C1200,0.420382166 1320,7.35031847 1440,21.2101911 Z"></path>
           </svg>
-          </div>
+        </div>
         <div class="container">
 
             <div class="grid">
                 
 
-                <div class="grid-col-12 grid-col-md-12 text-center">
+                <div class="grid-col-12 grid-col-md-12">
                     <h2 class="text-bold text-header h2-wh-sh-bl">
-                      <span class="telefonBlack" style="color: rgba(255, 255, 255, 0.9);">
-                        Multi
+                      <span class="telefonBlack" style="color: rgba(0, 0, 0, 0.6);">
+                        Two-Way
                       </span>
-                      <span class="telefonBlack" style="color: #ff7675;">Cloud</span>
-                      <br />
-                      <span style="color: rgba(255, 255, 255, 0.4);">for evolving</span>
-                      <br /> <span class="telefonBlack">works.</span></h2>
+
+                      <br /> <span class="telefonBlack">Cloud.</span>
+                    </h2>
+                  </div>
+
+                <div class="grid-col-2 grid-col-md-4" style="color: #ffffff;font-weight: 700;">
+
+                      <p>
+                        In Newt is always raining stories.<br />
+                        Writers of everything came here to evaporate their work
+                        and send it off to the world.
+                      </p>
+                      <p>
+                        Just like the water, it's free and abundant.<br />
+                        Your work it's safe in you and in Newt.
+
+                      </p>
                 </div>
+
+                <div class="grid-col-10 grid-col-md-8">
+                      <div id="animation" style="margin-left: -15%; margin-top: -5%;"></div>
+
+                </div>
+
                 
                 
 
 
                  
-                  <div class="grid-col-12 grid-col-md-12 text-center" style="z-index: 1;">
-                   
-                      <p style="color: #d8d8d8;">
-                        Newt is designed to be <span style="color: #fff;">restless</span>, and <span style="color: #fff;">relentless</span>.<br />
-                        We have original ideas<br />
-                        to help writers, thinkers, storytellers,<br />
-                        journalist, scientist, and more.
-                        <br />
-                        We have all the functions a reliant cloud<br />
-                        must have, plus functions to connect<br />
-                        clouds with other clouds.
-                      </p>
-                      <p>
-                        Let the fun begin.
-                      </p>
-                  </div>
                   
 
 
@@ -1092,6 +1144,8 @@
 
 <script src='lib/newt.js'></script>
 <script src='lib/tween.js'></script>
+<script src='https://res.cloudinary.com/rodetyo/raw/upload/v1462246062/bodymovin_418.js'></script>
+
 <script id="rendered-js">
 
 
@@ -1104,7 +1158,7 @@
         header.classList.toggle('menu-opened');
     }
 }());
-
+/*
 
 var xmlns = "http://www.w3.org/2000/svg",
 xlinkns = "http://www.w3.org/1999/xlink",
@@ -1160,7 +1214,17 @@ makeHearts();
 
 function randomBetween(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+}*/ 
+
+ var animData = {
+    wrapper: document.getElementById('animation'),
+    animType: 'svg',
+    loop: true,
+    prerender: true,
+    autoplay: true,
+    path: '../assets/json/howItWorks.json' };
+
+  var anim = bodymovin.loadAnimation(animData);
 
 document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
@@ -1173,8 +1237,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         elem.parentNode.removeChild(elem);
       },1000)
     },1000)
-    
+   
+
   });
+
 //From /codepen.io/jackrugile/pen/bdwvMo
 
 //# sourceURL=pen.js

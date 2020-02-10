@@ -2,7 +2,7 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
 
-@import url('https://fonts.googleapis.com/css?family=Raleway|Reem+Kufi|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Reem+Kufi|Righteous|Special+Elite&display=swap');
 
 /**
  * Set the way the browser calculates margins and padding to border-box instead
@@ -2566,6 +2566,10 @@ li {
   position: relative;
 }
 
+.phoneInverse:after {
+  left: -77px !important;
+  right: -172px !important;
+}
 .phonelineless:after {
   position: unset !important;
   background: transparent !important;
@@ -2881,11 +2885,11 @@ a.tag:hover {
 .text-header-clipped {
   font-size: 6rem;
   line-height: 1.1em;
-  color: transparent !important;
-  background-image: url(http://media-cache-ak0.pinimg.com/236x/79/e8/db/79e8dbe5b67d36cc7f8c1f80167f8bb8.jpg) !important;
+  color: #fff !important;
+  /*background-image: url(http://media-cache-ak0.pinimg.com/236x/79/e8/db/79e8dbe5b67d36cc7f8c1f80167f8bb8.jpg) !important;
   -webkit-background-clip: text;
   background-clip: text;
-
+*/
     text-shadow: 0 1px 0 rgba(0,0,0,.1), 0 2px 0 rgba(0,0,0,.5), 0 3px 0 rgba(0,0,0,.1), 0 4px 0 rgba(0,0,0,.1), 0 5px 0 rgba(0,0,0,.1), 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0), 0 3px 5px rgba(0, 0, 0, 0), 0 5px 10px rgba(0, 0, 0, 0), 0 10px 10px rgba(0, 0, 0, 0), 0 20px 20px rgba(0, 0, 0, 0.1)
  
 
@@ -3509,8 +3513,33 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
 }
 
 .section-cloud-top {
-  background-color: #080067 !important;
+   background:radial-gradient(50% 100%, rgba(255,255,255,.2), rgba(255,255,255,0)),
+    
+             linear-gradient(90deg, rgba(251, 32, 32, 0.11) 1px, transparent 0),
+             linear-gradient(180deg, rgba(224, 50, 50, 0.28) 1px, transparent 0),
+    
+             linear-gradient(90deg, rgba(208, 69, 69, 0.28) 1px, transparent 0),
+             linear-gradient(180deg, rgba(193, 38, 38, 0.22) 1px, transparent 0),
+    
+             linear-gradient(90deg, rgba(255, 118, 117, 0.32) 2px, transparent 0),
+             linear-gradient(180deg, rgba(245, 91, 91, 0.22) 2px, transparent 0);
+  
+  background-color:#e44c4b;
+  
+  background-size:100% 100%, 
+    
+                  50px 50px,
+                  50px 50px,
+    
+                  25px 25px,
+                  25px 25px,
+    
+                  100px 100px, 
+                  100px 100px;
+  
+  background-attachment: local;
   color: #ffffff;
+  overflow: hidden;
 }
 .h2-wh-sh-bl {
   text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.1607843137254902), 3px 3px 0 rgba(222, 230, 233, 0.01);
@@ -3524,7 +3553,7 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
   width: 100%;
   transform: translateY(-50%);
   color: #fff;
-  margin-left: -20%;
+  margin-left: -10%;
   bottom: -95px;
   z-index: 1;
   animation: 3s ease-in-out infinite alternate waveAnimateA;
@@ -3604,4 +3633,428 @@ to { box-shadow: 0 0 100px 15px #F4F6AD; }
 @keyframes shad-anim {
   0% {background-position: 0 0}
   0% {background-position: 100% -100%}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.containerPlanets {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  background: linear-gradient(-45deg, rgba(238, 119, 82, 0.45), rgba(255, 118, 117, 0.43), #d5237d8a, #3838388a);
+  background-size: 400% 400%;
+  -webkit-animation: daylight 15s ease infinite;
+          animation: daylight 15s ease infinite;
+
+  overflow: hidden;
+
+}
+
+.planet {
+  position: absolute;
+  top: 237px;
+  right: 144px;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #fecf4e), color-stop(50%, #a62a44), to(#310441));
+  background: linear-gradient(to bottom, #a72325 1%, #a62a44 50%, #310441 100%);
+  border-radius: 50%;
+  -webkit-transform: rotate(-15deg) translate(-35%, -55%);
+          transform: rotate(-15deg) translate(-35%, -55%);
+}
+
+@supports not ((-webkit-clip-path: inset(50% 0 0 0)) or (clip-path: inset(50% 0 0 0))) {
+  .ring-before,
+  .ring-after,
+  .ring-bigger-before,
+  .ring-bigger-after {
+    display: none;
   }
+}
+.ring-before,
+.ring-after,
+.ring-bigger-before,
+.ring-bigger-after {
+  content: "";
+  width: 126px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgb(255, 118, 117);
+  position: absolute;
+  top: 225px;
+  right: 199px;
+  -webkit-transform: skew(-54deg);
+          transform: skew(-54deg);
+}
+
+.ring-bigger-before,
+.ring-bigger-after {
+  -webkit-transform: skew(-54deg) scale(1.3);
+          transform: skew(-54deg) scale(1.3);
+  border-color: #ffffff;
+}
+
+.ring-before,
+.ring-bigger-before {
+  z-index: 3;
+  -webkit-clip-path: inset(50% 0 0 0);
+          clip-path: inset(50% 0 0 0);
+}
+
+.ring-after,
+.ring-bigger-after {
+  z-index: 1;
+  -webkit-clip-path: inset(0 0 50% 0);
+          clip-path: inset(0 0 50% 0);
+}
+
+.sub-planet {
+  position: absolute;
+  top: 24%;
+  left: 75%;
+  z-index: 4;
+  width: 35px;
+  height: 35px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #70a27d), color-stop(50%, #4552a1), to(#371a6a));
+  background: linear-gradient(to bottom, #70a27d 1%, #4552a1 50%, #371a6a 100%);
+  border-radius: 50%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+
+.orbit {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 244px;
+  right: 258px;
+
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+.orbit-1 {
+  -webkit-animation: orbit-1 5s linear infinite;
+          animation: orbit-1 5s linear infinite;
+}
+
+@-webkit-keyframes orbit-1 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(65px) rotate(0deg);
+            transform: rotate(0deg) translateX(65px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(65px) rotate(-360deg);
+            transform: rotate(360deg) translateX(65px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-1 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(65px) rotate(0deg);
+            transform: rotate(0deg) translateX(65px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(65px) rotate(-360deg);
+            transform: rotate(360deg) translateX(65px) rotate(-360deg);
+  }
+}
+.orbit-2 {
+  -webkit-animation: orbit-2 10s linear infinite;
+          animation: orbit-2 10s linear infinite;
+}
+
+@-webkit-keyframes orbit-2 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(80px) rotate(0deg);
+            transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(80px) rotate(-360deg);
+            transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-2 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(80px) rotate(0deg);
+            transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(80px) rotate(-360deg);
+            transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+.orbit-3 {
+  -webkit-animation: orbit-3 15s linear infinite;
+          animation: orbit-3 15s linear infinite;
+}
+
+@-webkit-keyframes orbit-3 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(95px) rotate(0deg);
+            transform: rotate(0deg) translateX(95px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(95px) rotate(-360deg);
+            transform: rotate(360deg) translateX(95px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-3 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(95px) rotate(0deg);
+            transform: rotate(0deg) translateX(95px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(95px) rotate(-360deg);
+            transform: rotate(360deg) translateX(95px) rotate(-360deg);
+  }
+}
+.orbit-4 {
+  -webkit-animation: orbit-4 20s linear infinite;
+          animation: orbit-4 20s linear infinite;
+}
+
+@-webkit-keyframes orbit-4 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg);
+            transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg);
+            transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-4 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg);
+            transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg);
+            transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+}
+.orbit-5 {
+  -webkit-animation: orbit-5 25s linear infinite;
+          animation: orbit-5 25s linear infinite;
+}
+
+@-webkit-keyframes orbit-5 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(125px) rotate(0deg);
+            transform: rotate(0deg) translateX(125px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(125px) rotate(-360deg);
+            transform: rotate(360deg) translateX(125px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-5 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(125px) rotate(0deg);
+            transform: rotate(0deg) translateX(125px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(125px) rotate(-360deg);
+            transform: rotate(360deg) translateX(125px) rotate(-360deg);
+  }
+}
+.orbit-6 {
+  -webkit-animation: orbit-6 30s linear infinite;
+          animation: orbit-6 30s linear infinite;
+}
+
+@-webkit-keyframes orbit-6 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(140px) rotate(0deg);
+            transform: rotate(0deg) translateX(140px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(140px) rotate(-360deg);
+            transform: rotate(360deg) translateX(140px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-6 {
+  from {
+    -webkit-transform: rotate(0deg) translateX(140px) rotate(0deg);
+            transform: rotate(0deg) translateX(140px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(140px) rotate(-360deg);
+            transform: rotate(360deg) translateX(140px) rotate(-360deg);
+  }
+}
+.cloud {
+  background: #f1f1f1;
+  width: 150px;
+  height: 80px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -5px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+.cloud:before, .cloud:after {
+  content: "";
+  background: #f1f1f1;
+  border-radius: 50%;
+  position: absolute;
+}
+.cloud:before {
+  width: 100px;
+  height: 100px;
+  bottom: 2px;
+  left: 5px;
+}
+.cloud:after {
+  width: 80px;
+  height: 80px;
+  bottom: 2px;
+  right: 15px;
+}
+
+.cloud-group-1,
+.cloud-group-2,
+.cloud-group-3 {
+  position: absolute;
+  bottom: 100px;
+  width: 211px;
+  height: 100px;
+  opacity: .2;
+}
+
+.cloud-group-1 {
+  bottom: -5px;
+}
+
+.cloud-group-2 {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  bottom: 80px;
+  left: -50px;
+}
+
+.cloud-group-3 {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+  bottom: 140px;
+  right: -24px;
+}
+
+.cloud-2 {
+  left: 10px;
+}
+
+.cloud-3 {
+  right: 10px;
+}
+
+.cloud-4 {
+  right: 184px;
+  bottom: 0;
+}
+
+.cloud-5 {
+  right: 24px;
+  bottom: 12px;
+}
+
+.cloud-6 {
+  right: -45px;
+  bottom: 9;
+}
+
+.star {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  -webkit-animation: shooting 5s linear infinite;
+          animation: shooting 5s linear infinite;
+}
+.star:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  right: 1px;
+  top: 0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.star-2 {
+  top: 100px;
+  -webkit-animation: shooting 8s 1s linear infinite;
+          animation: shooting 8s 1s linear infinite;
+}
+
+.star-3 {
+  top: 250px;
+  -webkit-animation: shooting 3s 2s linear infinite;
+          animation: shooting 3s 2s linear infinite;
+}
+
+@-webkit-keyframes daylight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes daylight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes shooting {
+  from {
+    left: -100px;
+  }
+  to {
+    left: calc(100% + 100px);
+  }
+}
+@keyframes shooting {
+  from {
+    left: -100px;
+  }
+  to {
+    left: calc(100% + 100px);
+  }
+}
+
