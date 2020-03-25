@@ -1387,6 +1387,8 @@
 </article>
 
 <script src='lib/newt.js'></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69688556-14"></script>
+
 <script id="rendered-js">
   document.addEventListener("DOMContentLoaded", function(event) {
     console.log("DOM fully loaded and parsed");
@@ -1401,6 +1403,12 @@
     },1000)
     
   });
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-69688556-14');
 </script>
+
 </body>
 </html>
